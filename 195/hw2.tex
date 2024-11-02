@@ -1,0 +1,39 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+1. Consider the morphism $f: x \to y$. Show that if there exists a pair of morphisms $g, h: y \to x$ so that $fg = 1_x$ and $hf = 1_y$, then $g = h$ and $f$ is an isomorphism. 
+
+Let $y_0 \in y$. 
+
+Note that:
+$(hf)g(y_0) = h(fg)(y_0)$
+
+$\Leftrightarrow g(hf(y_0)) = (fg)(h(y_0))$
+
+$\Leftrightarrow g(y_0) = h(y_0)$
+
+$\Leftrightarrow g = h$
+
+Since $g = h$, the initial conditions become $fg = 1_x$ and $gf = 1_y$, so $f$ is an isomorphism. $\square$
+
+2. For any category $\mathcal{C}$ and any object $c \in \mathcal{C}$, show that there is a category $\mathcal{C}/c$ whose objects are morphisms with codomain $c$ and morphism from $f: x \to c$ to $g: y \to c$ is a map $h: x \to y$ so that $f = gh$.
+
+Let $f, g, h$ be objects in $c / \mathcal{C}$ and $f: x \to c, ~ g: y \to c, ~ h:z \to c$. 
+
+Let $k, l$ be morphisms in $c / \mathcal{C}$ and $k: x \to y, ~ l:y \to z$.
+
+Since the set of morphisms in $c / \mathcal{C}$ is a subset of morphisms in $\mathcal{C}$, it is associative.
+
+To compose $k$ and $l$, by substituting $g = lh$ into $kg = f$, it becomes $k(lh) = f$. By associativity, it follows that $(kl)h = f$, so $kl$ is a morphisms in $\mathcal{C} / c$, and $kl: x \to z$.
+
+For any object $f: x \to c$, the identity morphism of $f$ is the morphism $1_f: x \to x$. Also, in $\mathcal{C}$, the identity morphism of object $x$ is the morphism $1_x: x \to x$. So $1_f = 1_x$. 
+
+So for any morphism $k: f \to g; x \mapsto y$, the composition morphism $1_fk = 1_xk = k$. Similarly, the composition morphism $k1_g = k1_y = k$.
+
+So $\mathcal{C} / c$ forms a category. $\square$
+\end{document}

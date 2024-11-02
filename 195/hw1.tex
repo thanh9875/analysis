@@ -1,0 +1,41 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+1. Show that the set of nondecreasing functions forms a monoid of functions on $\mathbb{R}$.
+
+Let $f$ and $g$ be nondecreasing functions on $\mathbb{R}$. 
+
+Let $x, y \in\mathbb{R}$ and $x>y$.
+
+Since $f$ is a nondecreasing function, $f(x) \geq f(y)$. Since $g$ is a nondecreasing function, $g(f(x)) \geq g(f(y))$. Thus $g \circ f$ is a nondecreasing function. 
+
+Define the function $e: x \mapsto x$. Note that $e$ is a nondecreasing function, and $(f \circ e)(x) = f(e(x)) = f(x) = e(f(x)) = (e\circ f)(x)$.
+
+So the set of nondecreasing function forms a monoid of function on $\mathbb{R}$. $\square$
+
+2. Show that the set $C(\mathbb{R})$ of all continuous functions $f: \mathbb{R} \rightarrow \mathbb{R}$ forms a monoid of functions on $\mathbb{R}$. 
+
+Let $f$ and $g$ be continuous functions on $\mathbb{R}$. 
+
+Let $x \in \mathbb{R}$.
+
+Since $g$ is a continuous function on $\mathbb{R}$, $g$ is defined and continuous at $x$. Since $f$ is a continuous function on $\mathbb{R}$, $f$ is defined and continuous at $g(x)$. So $f\circ g$ is a continuous function on $\mathbb{R}$.
+
+Define the function $e: x \mapsto x$. Note that $e$ is a continuous function, and $(f \circ e)(x) = f(e(x)) = f(x) = e(f(x)) = (e\circ f)(x)$.
+
+So the set $C(\mathbb{R})$ forms a monoid of function on $\mathbb{R}$. $\square$
+
+3. Let $f:X \rightarrow Y$ be a function with nonempty domain $X$. Show that there is a function $g: Y \rightarrow X$ such that $f = f\circ g \circ f$.
+
+For each $y \in \text{range}(f)$, let $x \in f^{-1}(\{y\})$. Define the function \\$g: Y \rightarrow X: y \mapsto x$.
+
+For each $y \in Y \setminus \text{range}(f)$, let $x_0 \in X$. Define the function \\$g: Y \rightarrow X: y \mapsto x_0$.
+
+Then $g$ is a well-defined function, and for any $x \in X$ and $f(x) = y \in Y$, \\$(f \circ g \circ f)(x) = f(g(y)) = f(x)$. $\square$
+
+\end{document}

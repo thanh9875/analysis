@@ -1,0 +1,51 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+1. Let $\mathcal{C}$ be a category. Prove that $\mathcal{C}(-,c)$ is a functor.
+
+For each object $d$ in $\mathcal{C}$, there is an object $\mathcal{C}(d,c)$, the set of all morphisms between from $d$ to $c$ in $\mathcal{C}$, in $\mathbf{Set}$. 
+
+For each morphism $f: x \to y$ in $\mathcal{C}$, there is a morphism \\$f^*: \mathcal{C}(y,c) \to \mathcal{C}(x,c); g \mapsto fg$ in $\mathbf{Set}$.
+
+For any composable pair $f: x \to y$ and $g: y \to z$ in category $\mathcal{C}$, the composition is $fg: x \to z$. 
+
+Let $h \in \mathcal{C}(z,c)$. 
+
+Note that the morphism $(fg)^*$ in $\mathbf{Set}$ from $\mathcal{C}(z,c)$ to $\mathcal{C}(x,c)$ maps $h$ to $fgh \in \mathcal{C}(x,c)$. Also, the morphism $g^*f^*$ in $\mathbf{Set}$, from $\mathcal{C}(z,c)$, through $\mathcal{C}(y,c)$, to $\mathcal{C}(x,c)$, maps $h$ to $gh \in \mathcal{C}(y,c)$ then to $fgh \in \mathcal{C}(x,c)$. So $(fg)^* = g^*f^*$.
+
+For any object $x$ in $\mathcal{C}$ with the morphism $k: x \to c$, $\mathcal{C}(-,c)$ maps the identity morphism $1_x$ to $1_x^*: \mathcal{C}(x,c) \to \mathcal{C}(x,c);~ k \mapsto 1_xk = k$. So $1_x^*$ is the identity morphism of $\mathcal{C}(x,c)$.
+
+So, $\mathcal{C}(-,c)$ is a contravariant functor. $\square$
+
+~
+
+2. Given functors $F: \mathcal{D}\to\mathcal{C}$ and $G: \mathcal{E}\to\mathcal{C}$, there is a category, called the comma category $F\downarrow G$. 
+
+(a) Prove $\cod: F\downarrow G \to \mathcal{E}$ is a functor.
+
+For each object $(d,e,f)$ in $F\downarrow G$, there is a object $e$ in $\mathcal{E}$.
+
+For each morphism $(h,k)$ in $F\downarrow G$, there is a morphism $k$ in $\mathcal{E}$.
+
+For any composable morphism $(h,k)$ and $(h', k')$ in $F\downarrow G$, \\$[(h,k)(h',k')]^{cod} = (hh', kk')^{cod} = kk' = (h,k)^{cod}~(h',k')^{cod}$.
+
+For any identity morphism $(1_d, ~1_e)$, $(1_d, ~1_e)^{cod} = 1_e$, which is the identity morphism of object $e$ in $\mathcal{E}$.
+
+So $\cod: F\downarrow G \to \mathcal{E}$ is a functor.
+
+(b) Construnct a canonical natural transformation $\alpha: \textrm{dom}F\implies \textrm{cod}G$.
+
+For each object $(d,e,f)$ in $F \downarrow G$, define the component $\alpha_{(d,e,f)} \coloneqq f$. We WTS $\alpha$ forms a natural transformation. 
+
+For any object $(d,e,f)$ in $F \downarrow G$, $(d,e,f)\textrm{dom}F = [(d,e,f){\textrm{dom}}]F = dF$. Similarly, $(d,e,f)\textrm{cod}G = [(d, e, f)cod]G = eG$. Since both $dF$ and $eG$ are objects of $\mathcal{C}$, we can define the component of $\alpha$ at $(d,e,f)$ to be just the arrow $f: dF \to eG$.
+
+For any morphism $(h,k): (d,e,f) \to (d',e',f')$, note that $\alpha_{(d,e,f)}(h,k)^{\textrm{cod}G} = f[(h,k)^{\textrm{cod}}]^G = fk^G$. Also, $(h,k)^{\textrm{dom}F}\alpha_{(d',e',f')} = [(h,k)^{\textrm{dom}}]^Ff' = h^Ff'$. \\Finally, since $fk^G = h^Ff'$  by the commutivity of morphisms in $F \downarrow G$, we have $\alpha_{(d,e,f)}(h,k)^{\textrm{cod}G} = (h,k)^{\textrm{dom}F}\alpha_{(d',e',f')}$.
+
+So $\alpha$ forms a natural transformation. $\square$
+
+\end{document}

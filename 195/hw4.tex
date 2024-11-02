@@ -1,0 +1,29 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{extpfeil}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+1. Show that a composition of natural transformations is a natural transformation.
+
+Let $\mathcal{C}, \mathcal{D}, \mathcal{E}$ be categories. 
+
+Let $F,G: \mathcal{C} \rightrightarrows \mathcal{D}$ and $K,L: \mathcal{D} \rightrightarrows \mathcal{E}$ be functors.
+
+Let $\alpha: F \Rightarrow G$ and $\beta: K \Rightarrow G$ be natural transformations.
+
+Since the composition of functors is functor, we can define the functor $FK, GL: \mathcal{C} \rightrightarrows \mathcal{E}$. We WTS the composition of natural transformations of these functors, $\alpha\beta: FK \Rightarrow GL$, is a natural transformation. 
+
+Let $c, d$ be objects and a morphism $f: c\to d$ in $\mathcal{C}$. Define the component of $\alpha\beta$ at $c$ as $\alpha\beta_c\coloneqq \beta_{cF}$. Since $\beta: K \Rightarrow G$ is a natural transformation, its component at $cF$ is $\beta_{cF}: cFK \to cGL$, which are the same image of $c$ under $FK$ and $GL$. 
+
+Moreover, the morphism $f$, under $FK$ and $GL$, becomes $f^{FK}$ and $f^{GL}$, each together with components of $\alpha\beta$ as defined above, commutes since $\beta$ and $\alpha$ are natural transformations.
+
+Thus, $\alpha\beta$ is a natural transformation. $\square$
+
+2. 
+
+\end{document}
