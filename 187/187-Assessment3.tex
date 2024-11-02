@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\newcommand{\RE}{\mathrm{Re}}
+\newcommand{\IM}{\mathrm{Im}}
+
+
+\begin{document}
+
+Show that
+
+\begin{enumerate}
+    \item $\lim\limits_{z\to z_0} \RE(z) = \RE(z_0)$
+
+    Let $\epsilon > 0$.
+
+    Let $0 < \delta < \epsilon$.
+
+    Then, for any $z, z_0$ such that, $|z-z_0| < \delta$, we have the following:
+    $$|\RE(z) - \RE(z_0)| = |\RE(z-z_0)| \le |z-z_0| < \delta < \epsilon$$
+    So, $\lim\limits_{z\to z_0} \RE(z) = \RE(z_0)$
+
+    \item $\lim\limits_{z\to z_0} \bar z = \bar z_0$
+
+    Let $\epsilon > 0$.
+
+    Let $0 < \delta  = \epsilon$.
+
+    Then, for any $z, z_0$ such that, $|z-z_0| < \delta$, we have the following:
+    $$|\bar z - \bar z_0| = |\overline{z-z_0}| = |z-z_0| < \delta = \epsilon$$
+    So, $\lim\limits_{z\to z_0} \bar z = \bar z_0$.
+
+    \item $\lim\limits_{z\to 0} \frac{\bar z^2}{z} = 0$
+    
+    Let $\epsilon > 0.$
+    
+    Let $\delta < \frac{\epsilon}{2}$.
+
+    For any real number $a, b$, we have that $(a-b)^2 = a^2+b^2-2ab \geq 0$, or $a^2+b^2 \geq 2ab$.
+
+    For any $z = x + iy$ such that $|z| < \delta$, we have the following:
+    \begin{align*}
+    |\frac{\bar z^2}{z}| &= |\frac{x^2-y^2-2ixy}{x+iy}|\\
+    &= |x-iy - \frac{2ixy}{x+iy}|\\
+    &\le |\bar z| + |\frac{2ixy}{x+iy}|\\
+    &= |z| + \frac{|2xy|}{|z|}\\
+    &\le |z| + \frac{|x^2+y^2|}{|z|} = |z| + \frac{|z|^2}{|z|} = 2|z| < 2\delta < \epsilon.
+    \end{align*}
+    So, $\lim\limits_{z\to 0} \frac{\bar z^2}{z} = 0$.
+    \newpage
+    
+    \item If a function $f(z)$ is continuous and nonzero at $z_0$, then there exists some neighborhood of $z_0$ such that $f(z) \not = 0$ for all points in said neighborhood.
+
+    Let $\epsilon = \frac{|f(z_0)|}{2} > 0$.
+    
+    Note that, for such $\epsilon$, there exists $\delta > 0$ such that, if $|z-z_0| < \delta$, 
+    \begin{align*}
+    |f(z_0)| &= |f(z_0) - f(z) + f(z)|\\
+    &\le |f(z_0) - f(z)| + |f(z)|\\
+    &< \epsilon + |f(z)|
+    \end{align*}
+
+    So, $|f(z)| > |f(z_0)| - \epsilon = \epsilon$, or $f(z) \not = 0$. $\square$
+    
+ \end{enumerate}
+
+\end{document}

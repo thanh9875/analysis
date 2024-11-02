@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{systeme}
+\linespread{1}
+\graphicspath{ {./images/} }
+
+
+\begin{document}
+\begin{enumerate}
+    \item Suppose $f$ and $\bar f$ are analytic on some domain $D$. Show that $f$ is constant.
+
+    Let $f = u(x,y) + iv(x,y)$ and $\bar f = u(x.y) - iv(x,y)$ for some $u(x,y), v(x,y)$.
+
+    Then by Cauchy-Riemann equations, all of these must hold:
+
+    \begin{equation*}
+    \begin{cases}
+    u_x = v_y\\
+    u_y = -v_x\\
+    u_x = -v_y\\
+    u_y = v_x
+    \end{cases}
+    \end{equation*}
+
+    Solve for $u_x$ and $v_x$, we arrive at $u_x = v_x = 0$. So for any $z \in D$, $f'(z) = 0$, or $f$ is constant.
+
+    \item Suppose $f$ is analytic on domain $D$. Suppose $|f(z)|$ is constant. Show that $f$ is constant.
+
+   Let $|f(z)| = c$ for some constant $c$. 
+   If $c=0$, $f$ is constant. 
+   
+   If $c\not = 0$, it follows that $f\bar f = c \not = 0$, so $f(z) \not = 0$ in $D$.
+
+   Then $\bar f = \frac{1}{f}$, which is the quotient of two analytic functions, so $\bar f$ is analytic. 
+
+   Thus from Problem 1, $f$ is constant.
+
+   \item Suppose $f$ is analytic on domain $D$ and $f$ is real-valued. Show that $f$ is constant.
+
+   Since $f(z) = u(x,y) + iv(x,y)$ is real-valued, $v(x,y) = 0$. It follows that, from Cauchy-Riemann equations, $u_x = v_y =0$ and $u_y = -v_x = 0$. Thus $ f(z) = u(x,y) = c$ for some constant $c$. $\square$
+   
+   \end{enumerate}
+
+\end{document}

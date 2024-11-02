@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\linespread{2.0}
+
+\begin{document}
+
+\begin{enumerate}
+    \item $\cosh{(x)}$ and $\sinh{(x)}$ for $x\in\mathbb{R}$
+    
+    $\sinh{(x)} = \frac{e^x -e^{-x}}{2}$ and $\cosh{(x)} = \frac{e^x+e^{-x}}{2}$
+
+    \item $\sin{(iy)} = \frac{e^{-y} - e^{y}}{2i} = i \sinh{(y)}$
+    \item $\cos{(iy)} = \frac{e^{-y} + e^y}{2} = \cosh{(y)}$
+    \item $\sin(z) = \sin(x+iy) $
+        
+        $\hspace{1.2cm}= \sin(x)\sin(iy) + \cos(x)\cos(iy)$
+        
+       $\hspace{1.2cm}= i\sin(x)\sinh(y) + \cos(x)\cosh(y)$
+        
+        $\hspace{1.2cm}= \sin(x)\cosh(y) + i\cos(x)\sinh(y)$
+    \item $\cos(z) = \cos(x+iy)$
+
+    $ \hspace{1.2cm}= \cos(x)\cos(iy) - \sin(x)\sin(iy)$
+
+    $\hspace{1.2cm} = \cos(x)\cosh(y) - i\sin(x)\sinh(y)$
+
+    \item $\cosh(y)^2 - \sinh(y)^2 = \frac{e^{2y} + e^{-2y} +2}{4} - \frac{e^{2y} + e^{-2y} - 2}{4} = 1$.
+    \item $|\sin(z)|^2 = \sin(x)^2\cosh(y)^2 + \cos(x)^2\sinh(y)^2$
+
+    $\hspace{1.7cm}= \sin(x)^2\sinh(x)^2 + \sin(x)^2 + \cos(x)^2\sinh(y)^2$
+
+    $\hspace{1.7cm}=\sin(x)^2 +  \sinh(y)^2$
+
+    \item $|\cos(z)|^2 = \cos(x)^2\cosh(y)^2 + \sin(x)^2\sinh(y)^2$
+
+    $\hspace{1.7cm}= \cos(x)^2\sinh(x)^2 + \cos(x)^2 + \sin(x)^2\sinh(y)^2$
+
+    $\hspace{1.7cm}= \sinh(x)^2 + \cos(x)^2$
+
+    \item Let $\sin(z)$ has zeroes at $z_0 = x_0 + iy_0$. Then $|\sin(z_0)|^2 = \sin(x_0)^2 + \sinh(y_0)^2 = 0$, \\or $\sin(x_0) = \sinh(y_0) = 0$. This happens if and only if $x_0 = \pi + k\pi$ for $k \in \mathbb{Z}$ and $y_0 = 0$. Thus $z_0 = \pi + k\pi$ for $k \in \mathbb{Z}$, same zeroes as real function $\sin(x)$.
+
+    Let $\cos(z)$ has zeroes at $z_0 = x_0 + iy_0$. Then $|\cos(z_0)|^2 = \cos(x_0)^2 + \sinh(y_0)^2 = 0$, \\or $\cos(x_0) = \sinh(y_0) = 0$. This happens if and only if $x_0 = \frac{\pi}{2} + k\pi$ for $k \in \mathbb{Z}$ and $y_0 = 0$. Thus $z_0 = \frac{\pi}{2} + k\pi$ for $k \in \mathbb{Z}$, same zeroes as real function $\cos(x)$.
+
+    \item $\tan(z) = \frac{\sin(z)}{\cos(z)}$, $\cot(z) = \frac{\cos(z)}{\sin(z)}$, $\csc(z) = \frac{1}{\sin(z)}$, $\sec(z) = \frac{1}{\cos(z)}$
+
+    Let $f(z) = \sin(z) =  u(x,y) + iv(x,y) =\sin(x)\cosh(y) + i\cos(x)\sinh(y)$.
+    
+    Then $u_x = v_y = \cos(x)\cosh(y)$ and $u_y = -v_x = \sin(x)\sinh(y)$ for all $x, y$, \\$\sin(z)$ is entire in $\mathbb{C}$, and $\frac{d}{dz}\sin(z) = \cos(x)\cosh(y) -i \sin(x)\sinh(y) = \cos(z)$. Similarly, $\cos(z)$ is entire in $\mathbb{C}$, and $\frac{d}{dz}\cos(z) = -\sin(z)$. 
+    
+    Then, by theorem $(5)$ in Section 20, all four functions are analytic everywhere except in the zeroes of the denominator. Specifically, $\tan(z)$ and $\sec(z)$ are analytic everywhere except for $z_0  = \frac{\pi}{2} + k\pi$, where $\cot(z)$ and $\csc(z)$ are analytic everywhere except for $z_0  = \pi + k\pi$ for $k\in\mathbb{Z}$.
+
+    And, by the rule of differentiation, 
+
+    $\frac{d}{dz} \tan(z) = \frac{\cos(z)\cos(z) + \sin(z)\sin(z)}{\cos(z)^2} = \sec(z)^2$
+
+    $\frac{d}{dz} \cot(z) = -\csc(z)^2$
+
+    $\frac{d}{dz} \csc(z) = \frac{-\cos(z)}{\sin(z)^2} = -\cot(z)\csc(z)$
+
+    $\frac{d}{dz} \sec(z) = \frac{\sin(z)}{\cos(z)^2} = \tan(z)\sec(z)$
+
+    
+\end{enumerate}
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+
+\begin{document}
+Let $m$ be the Lebesgue measure as described in class.  Let $\mathscr{C}$ be the Cantor set as described in class.  Compute $m(\mathscr{C})$.
+
+Proof:
+
+Let $\mathscr{C}$ be the Cantor Set.
+
+Then, with deMorgan's law and Assessment 17 part 3,
+
+$\hspace{1cm}\mu(\mathscr{C})$
+
+$\hspace{0.5cm}= \mu(\bigcap\limits_{i}^{\infty} C_i)$
+
+$\hspace{0.5cm}= 1 - \mu(\bigcup\limits_{i}^{\infty} C_i^c)$
+
+$\hspace{0.5cm}= 1 - \lim\limits_{n \to \infty} \mu(\mathscr{C}_n^c)$
+
+$\hspace{0.5cm}= 1 - \lim\limits_{n \to \infty} \sum\limits_{i=0}^{n} \frac{1}{3} (\frac{2}{3})^i$
+
+$\hspace{0.5cm}= 1 - \frac{1}{3}\times\frac{1}{1-\frac{2}{3}}$
+
+$\hspace{0.5cm}= 1 - 1  = 0$.
+
+Since $\mu$ is a measurement, $\mu({\mathscr{C}}) = 0$. $\square$
+
+
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\linespread{2.0}
+
+\begin{document}
+1. Let $z_1$ and $z_2$ denote two complex numbers. Prove that $|z_1z_2| = |z_1||z_2|$.
+
+Proof:
+
+Let $z_1 = a_1 + b_1i$ and $z_2 = a_2 + b_2i$. 
+
+Then
+
+$\hspace{4cm}|z_1z_2| = |(a_1 + b_1i)(a_2+b_2i)|$
+
+$\hspace{5.1cm}= |a_1a_2 - b_1b_2 + (a_1b_2+a_2b_1)i|$
+
+$\hspace{5.1cm}= \sqrt{(a_1a_2-b_1b_2)^2 + (a_1b_2+a_2b_1)^2}$
+
+$\hspace{5.1cm}= \sqrt{a_1^2a_2^2 + b_1^2b_2^2 + a_1^2b_2^2+a_2^2b_1^2}$
+
+Also,
+
+$\hspace{4cm}|z_1||z_2| = \sqrt{a_1^2+b_1^2} \sqrt{a_2^2+b_2^2}$
+
+$\hspace{5.3cm}= \sqrt{a_1^2a_2^2 + b_1^2b_2^2 + a_1^2b_2^2+a_2^2b_1^2}$
+
+So, $|z_1z_2| = |z_1||z_2|$. $\square$
+
+$$$$
+
+2. Let $z$ be a complex number. For $n \in \mathbb{N}$, show that $|z^n| = |z|^n$.
+
+Proof:
+
+Base case: for $n=1$, $|z| = |z|$.
+
+Induction hypothesis: For $n \geq 1$, suppose that $|z^n| = |z|^n$.
+
+Then $|z^{n+1}| = |z^n \times z| = |z^n|\times|z| = |z|^n\times|z| = |z|^{n+1}$.
+
+So, for $n \in \mathbb{N}$, $|z^n| = |z|^n$. $\square$
+
+\end{document}

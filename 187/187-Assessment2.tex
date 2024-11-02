@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\linespread{2.0}
+
+\begin{document}
+
+\begin{enumerate}
+    \item Prove that for any set $S$, $z \in \mathbb{C}$ is an interior point to $S$ if and only if $z$ is an exterior point to $S^c$.
+
+    For any point $z \in \mathbb{C}$, $z$ is an interior point to $S$ if and only if there exists $\epsilon > 0$ such that the $\epsilon$-neighborhood is contained within $S$ which happens if and only if that neighborhood does not intersect $S^c$. So $z$ is an exterior point to $S^c$. $\square$
+    \item Prove that for any set $S$, $\partial S = \partial S^C$.
+
+    $\partial S$ is the set of all boundary points of $S$, or points with every neighborhoods intersect with both $S$ and $S^c$. 
+    
+    $\partial S^C$ is the set of all boundary points of $S^c$, or points with every neighborhoods intersect with both $S^c$ and $(S^c)^c = S$.
+
+    So $\partial S = \partial S^c$. $\square$
+    \item Prove that a set $S$ is open if and only if $S^c$ is closed.
+
+    A set $S$ is open if and only if it does not contain any of its boundary points. So it will also not contain any boundary points of its complement, since $\partial S = \partial S^c$, or $\partial S^c \subset S^c$. Thus $S^c$ is closed. $\square$
+    
+\end{enumerate}
+
+\end{document}

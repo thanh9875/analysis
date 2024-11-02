@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+
+\begin{document}
+\item For each of the following, decide if the stated function $\mu$ does indeed define a measure on the provided $\mathbb{X}$.  Explain your answer.
+\begin{enumerate}
+\item $\mathbb{X}\subseteq\mathbb{R}$ nonempty, $\mathscr{M}$ a $\sigma$-algebra.  $\mu:\mathscr{M}\rightarrow[0,\infty]$ by $\mu(E)=$the number of elements in $E$ for all $E\in\mathscr{M}$.
+\item $\mathbb{X}\subseteq\mathbb{R}$ nonempty, $x_0\in\mathbb{X}$, $\mathscr{M}$ a $\sigma$-algebra.  $\mu:\mathscr{M}\rightarrow[0,\infty]$ by $\mu(E)=\begin{cases}1&x_0\in E\\0&x_0\nin E\end{cases}$ for all $E\in\mathscr{M}$.
+\item $\mathbb{X}\subseteq\mathbb{R}$ uncountable, $\mathscr{M}$ the $\sigma$-algebra $\mathscr{M}=\left\{E\subseteq \mathbb{X}:E\text{ is countable or }E^c\text{ is countable}\right\}$.  $\mu:\mathscr{M}\rightarrow[0,\infty]$ by $\mu(E)=\begin{cases}0&E\text{ is countable}\\1&E^c\text{ is countable}\end{cases}$ for all $E\in\mathscr{M}$.
+\item $\mathbb{X}\subseteq\mathbb{R}$ infinite, $\mathscr{M}=\mathscr{P}(\mathbb{X})$.  $\mu:\mathscr{M}\rightarrow[0,\infty]$ by $\mu(E)=\begin{cases}0&E\text{ finite}\\\infty&E\text{ infinite}\end{cases}$ for all $E\in\mathscr{M}$.
+\end{enumerate}
+
+Proof
+
+\begin{enumerate}
+\item Yes. First $\mu(\emptyset) = 0$. Disjoint sets do not have same elements, so the number of elements of the union of them will equal to the sum of the number of elements, including infinitely many.
+\item Yes. First $\mu(\emptyset) = 0$. For any element $x_0$, among all disjoint sets, $x_0$ is inside at most one of them. So the measurement of the union will be either 1, if one of them contains $x_0$, or 0, if none of them contains $x_0$. And that is equal to either 1 or 0 in both cases.
+\item Yes. First $\mu(\emptyset) = 0$.
+      For 2 countable sets, the measurement of the union is $0$. The sum of measurement is $0$.
+
+      For 2 uncountable sets, the measure of the union is $1$. The sum of measurement is $1$.
+
+      For a countable and an uncountable, the measure of the union is $1$. The sum of measurement is $1$.
+\item No. For $n \in \mathbb{N}$, let $E_n = \{n\}$. The union of $E_n$ is infinite. Its measurement is $\infty$, and the sum of each $E_n$ is $0$.
+\end{enumerate}
+$\square$
+\end{document}

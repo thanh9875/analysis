@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+
+\begin{document}
+Let $m$ be the Lebesgue measure as described in class.  Let $f$ and $g$ be simple functions, and $c\in\mathbb{R}$.
+\begin{enumerate}
+    \item Prove that $f+g$ is a simple function
+    \item Prove that $cf$ is a simple function
+    \item Prove that $\int f+g dm=\int fdm+\int gdm$
+    \item Prove that $\int cfdm=c\int fdm$
+    \item Prove that if $f\leq g$ on $\mathbb{X}$, then $\int fdm\leq\int gdm$.
+\end{enumerate}
+
+Proof:
+\begin{enumerate}
+    \item Let $E$ and $F$ be the sequences of measurable sets for $f$ and $g$.
+
+    Define $G = \{E_i \cap F_j | E_i \in E, F_j \in F\}$.
+    Then $G$ contains all mesurable sets by both $f$ and $g$.
+    Define $\alpha_{G_n} = \alpha_{E_i} + \alpha_{F_j}$
+    and $\chi_{G_n} = \max(\chi_{G_n \setminus E_i}, \chi_{G_n \setminus F_j})$ where $G \ni G_n = E_i \cap F_j$.
+
+    Then $f+g = \sum \alpha_{G_n} \chi_{G_n}$ is simple.
+
+    \item $cf = c \sum \alpha_{E_n} \chi_{E_n} = \sum c\alpha_{E_n} \chi_{E_n}$, and $c, \alpha_{E_n} \in \mathbb{R}$, so it is simple.
+
+    \item Define $\mu(G_n) = \mu(G_n \cap E_i)$ where $G_n \subseteq E_i$.
+
+    Then $\int f+g dm = \sum \alpha_{G_n} \mu(G_n) = \sum \alpha_{E_i}\mu(G_n) + \sum \alpha_{F_j}\mu(G_n) =\int fdm+\int gdm$, since $\bigcup G_n = \bigcup E_i = \bigcup F_j$.
+
+    \item $\int cfdm = \int \sum c \alpha_{E_i} \chi_{E_i}dm = \sum c\alpha_{E_i} \mu(E_i) = c \sum\alpha_{E_i} \mu(E_i) = c\int fdm$.
+
+    \item Rewrite simple functions $f$ and $g$ with $G$. Since $f \le g$ on $\mathbb{X}$, for all $x \in \mathbb{X}$, $f(x) \le g(x)$, and by using $G_n$, we have $\int fdm\leq\int gdm$.
+\end{enumerate}
+$\square$
+
+\end{document}
