@@ -1,6 +1,7 @@
 \documentclass{article}
 \linespread{2.0}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{systeme}
 \usepackage{graphicx} % Required for inserting images
@@ -25,32 +26,28 @@ Proof:
     \item Consider the partition $ P = \{0, \frac{1}{2^n}, \frac{2}{2^n}, \dots , \frac{2^n-1}{2^n}, 1\}$.
 
     For each $k$, $m_k = \inf(x^2|x \in [\frac{k-1}{2^n}, \frac{k}{2^n}]) = \frac{(k-1)^2}{4^n}$ and $M_k = \sup(x^2|x \in [\frac{k-1}{2^n}, \frac{k}{2^n}]) = \frac{k^2}{4^n}$.
-
-    Then, $L(f, P) = \sum\limits_{k=1}^{2^n} m_k(\frac{k}{2^n} - \frac{k-1}{2^n}) $
+    Then, 
+    \begin{align*}
+        L(f, P) & = \sum\limits_{k=1}^{2^n} m_k(\frac{k}{2^n} - \frac{k-1}{2^n}) \\
+        & = \sum\limits_{k=1}^{2^n} \frac{(k-1)^2}{4^n} \times \frac{1}{2^n} \\
+        & = \frac{2^n(2^n-1)(2^{n+1}-1)}{6\times8^n} \\
+        & = \frac{2^{2n+1} -2^{n+1} - 2^n +1}{6\times4^n} \\
+        & = \frac{2\times4^n}{6\times4^n} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} \\
+        & = \frac{1}{3} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}
+    \end{align*}
     
-    $\hspace{2.25cm}= \sum\limits_{k=1}^{2^n} \frac{(k-1)^2}{4^n} \times \frac{1}{2^n}$
-    
-    $\hspace{2.25cm}= \frac{2^n(2^n-1)(2^{n+1}-1)}{6\times8^n}$
-    
-    $ \hspace{2.25cm}= \frac{2^{2n+1} -2^{n+1} - 2^n +1}{6\times4^n} $
-    
-    $\hspace{2.25cm}= \frac{2\times4^n}{6\times4^n} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} $
-    
-    $\hspace{2.25cm}= \frac{1}{3} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}$
 
     As $L(f) = \sup\{ L(f, P) | P \textit{ is a partition}\}$, $L(f) = \frac{1}{3}$.
 
-    Similarly, $U(f, P) = \sum\limits_{k=1}^{2^n} M_k(\frac{k}{2^n} - \frac{k-1}{2^n}) $
-
-    $\hspace{2.85cm}= \sum\limits_{k=1}^{2^n} \frac{k^2}{4^n} \times \frac{1}{2^n}$
-    
-    $\hspace{2.85cm}= \frac{2^n(2^n+1)(2^{n+1}+1)}{6\times8^n}$
-    
-    $ \hspace{2.85cm}= \frac{2^{2n+1} +2^{n+1} + 2^n +1}{6\times4^n} $
-    
-    $\hspace{2.85cm}= \frac{2\times4^n}{6\times4^n} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} $
-    
-    $\hspace{2.85cm}= \frac{1}{3} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}$
+    Similarly, 
+    \begin{align*}
+        U(f, P) &= \sum\limits_{k=1}^{2^n} M_k(\frac{k}{2^n} - \frac{k-1}{2^n})\\
+        & = \sum\limits_{k=1}^{2^n} \frac{k^2}{4^n} \times \frac{1}{2^n}\\
+        & = \frac{2^n(2^n+1)(2^{n+1}+1)}{6\times8^n}\\
+        & = \frac{2^{2n+1} +2^{n+1} + 2^n +1}{6\times4^n}\\
+        & = \frac{2\times4^n}{6\times4^n} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}\\
+        & = \frac{1}{3} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}
+    \end{align*}
 
     As $U(f) = \inf \{ U(f, P) | P \textit{ is a partition}\}$, $U(f) = \frac{1}{3}$.
 
