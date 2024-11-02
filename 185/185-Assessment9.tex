@@ -1,0 +1,52 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+Suppose that $f_n$ converges to $f$ uniformly on some $D\subseteq \mathbb{R}$.  For each of the following statements, either prove it true or find a counter example disproving the claim.
+\begin{enumerate}
+\item If each $f_n$ is uniformly continuous, then $f$ is uniformly continuous.
+\item If each $f_n$ is bounded, then $f$ is bounded.
+\item If each $f_n$ has a finite number of discontinuities, then $f$ has a finite number of discontinuities.
+\end{enumerate}
+
+Proof:
+
+\begin{enumerate}
+    \item Let $\epsilon > 0$.
+    
+    Since $f_n$ converges to $f$ uniformly, there exists $N \in \mathbb{N}$ such that for all $n \geq N$ and $x \in D$, $|f_n(x)-f(x)| < \frac{\epsilon}{3}$.
+
+    Since $f_n$ is uniformly continuous, there exist $\delta > 0$ such that for all $x,y \in D$ such that $|x-y| < \delta$, $|f_n(x)-f_n(y)| < \frac{\epsilon}{3}$ for all $n$.
+
+    Note that, for $\delta$ as above, for all $x, y \in D$ such that $|x-y| < \delta$ and $n > N$, \\$|f(x) - f(y)| = |f(x) - f_n(x) + f_n(x) - f_n(y)+f_n(y) - f(y)| $
+    
+    $\hspace{2.1cm}< |f(x)-f_n(x)| + |f_n(x)-f_n(y)| + |f_n(y) - f(y)|$
+    
+    $\hspace{2.1cm} < \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon$.
+
+    So $f$ is uniformly continuous.
+    
+    \item Let $\epsilon > 0$.
+
+    Since $f_n$ converges to $f$ uniformly, there exists $N \in \mathbb{N}$ such that for all $n \geq N$ and $x \in D$, $|f(x)-f_n(x)| < \epsilon$.
+
+    Since $f_n$ is bounded, for each $n$, there exists $M_n > 0$ such that \\$|f_n(x)| \le M_n$ for all $x \in D$.
+
+    Then, for $n \geq N$, we have that 
+    
+    $|f(x)| = |f(x) - f_n(x) + f_n(x)| \le |f(x) - f_n(x)| + |f_n(x)| < M_n + \epsilon$.
+
+    So $f$ is bounded.
+
+    \item Let $\epsilon > 0$.
+
+    
+    
+\end{enumerate}
+
+\end{document}

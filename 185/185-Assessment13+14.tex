@@ -1,0 +1,57 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx}
+\begin{document}
+
+Let $f$ and $g$ be Riemann Integrable functions on the interval $[a,b]$, and $k\in\mathbb{R}$.  Prove the following:
+\begin{enumerate}
+\item The function $f+g$ is Riemann Integrable on $[a,b]$, and $\int_a^b(f+g)dx=\int_a^bfdx+\int_a^bgdx$.
+\item The function $kf$ is Riemann Integrable on $[a,b]$, and $\int_a^b(kf)dx=k\int_a^bfdx$.
+\item If $f(x)\leq g(x)$ for all $x\in[a,b]$, then $\int_a^bfdx\leq\int_a^bgdx$.
+\end{enumerate}
+
+Proof:
+
+\begin{enumerate}
+    \item Let $P$ be a partition. 
+
+    For each $k$, let $m_k = \inf\{f(x) | x \in [x_{k-1}, x_k]\}$ and $n_k= \inf\{g(x) | x \in [x_{k-1}, x_k]\}$. Then, for all $x \in [x_{k-1}, x_k]$, 
+    
+    $\hspace{1.5cm}m_k \le f(x)$
+
+    $\hspace{1.1cm} \Leftrightarrow m_k + g(x) \le f(x) + g(x)$
+
+    $\hspace{1.1cm} \Leftrightarrow m_k + g(x) \le \inf\{f(x) +g(x)\}$
+
+    $\hspace{1.1cm} \Leftrightarrow \inf\{m_k + g(x)\} \le m_k + g(x) \le \inf\{f(x) +g(x)\}$
+
+    $\hspace{1.1cm} \Leftrightarrow m_k + n_k \le \inf\{f(x) +g(x)\}$
+
+    $\hspace{1.1cm} \Leftrightarrow \sum (m_k + n_k)(x_{k}-x_{k-1}) \le \sum\inf\{f(x) +g(x)\}(x_k - x_{k-1})$
+
+    $\hspace{1.1cm} \Leftrightarrow L(f, P) + L(g, P) \le L(f+g, P)$
+
+    Similarly, we have $U(f+g, P) \le U(f,P) + U(g,P)$, so the inequality becomes $L(f, P) + L(g, P) \le L(f+g, P) \le U(f+g, P) \le U(f,P) + U(g,P)$. 
+    
+    Since $P$ is arbitrary and $f, g$ are Riemann Integrable, we have \\$L(f) + L(g) = L(f+g) = U(f+g) = U(f) + U(g)$, so $f+g$ is Riemann Integrable. And, $\int_a^bfdx+\int_a^bgdx = U(f) + U(g) = U(f+g) = \int_a^b(f+g)dx$. 
+
+    \item Let $\epsilon > 0$.
+    
+    $\hspace{1cm}$Assume $k = 0$, then $kf(x) = 0$, and it is Riemann Integrable, and $\int_a^b(kf)dx=0  = k\int_a^bfdx$
+    
+    $\hspace{1cm}$Assume $k < 0$. Let $P$ be the partition such that $U(f, P) - L(f,P) < \frac{\epsilon}{|k|}$. For each $i$, for all $x \in [x_{i-1}, x_i]$, $m_i \le f(x)$, so $km_i \geq kf(x)$, so $km_i \geq \sup\{kf(x)\}$. Similarly, $kM_i \le \inf \{ kf(x)\}$. Then, \\$U(kf, P) - L(kf, P) \le k(m_i - M_i) < -k\frac{\epsilon}{|k|} < \epsilon$.
+
+    $\hspace{1cm}$Assume $k > 0$. Let $P$ be the partition such that $U(f, P) - L(f,P) < \frac{\epsilon}{k}$. For each $i$, for all $x \in [x_{i-1}, x_i]$, $m_i \le f(x)$, so $km_i \le kf(x)$, so $km_i \le \inf\{kf(x)\}$. Similarly, $kM_i \geq \sup \{ kf(x)\}$. Then, \\$U(kf, P) - L(kf, P) \le k(M_i - m_i) < k\frac{\epsilon}{k} < \epsilon$.
+
+    $\hspace{1cm}$WLOG, let $k > 0$. For any partition $P$, $kU(f) = k\inf\{U(f,P)\} = \inf\{kU(f,P)\} = \inf\{U(kf, P)\} = U(kf)$. Similarly, $kL(f) = L(kf)$. So $\int_a^b(kf)dx = U(kf) = kU(f)= k\int_a^bfdx$.
+
+    \item Let $P$ be an arbitrary partition. For any $i$, for all $x \in [x_{i-1}, x_i]$, \\$f(x) \le g(x)$, so $\inf(f(x)) \le f(x) \le \inf(g(x)) \le g(x)$. 
+    
+    So, $L(f, P) \le L(g,P)$, which results in \\$L(f,P) \le L(f) = \sup\{L(f, P)\} \le L(g, P) \le \sup\{L(g,P)\} = L(g)$. 
+    
+    Thus, $\int_a^bfdx\leq\int_a^bgdx$. $\square$
+. \end{enumerate}
+\end{document}

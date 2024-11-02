@@ -1,0 +1,30 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+Let $\mathcal{E}\subseteq \mathbb{R}$ be compact, and $\mathcal{E}\subseteq \mathcal{D}$, where $\mathcal{D}$ is the domain of a function $f$.  Suppose $f$ is continuous.  Then $f(\mathcal{E})=\{f(x):x\in \mathcal{E}\}$ is compact.
+
+Proof:
+
+Let $\{ a_n \}$ be a sequence in $f(\mathcal{E})$, and let $\{ b_n \}$ be the sequence in $\mathcal{E}$ such that, for any $n$, $f(b_n) = a_n$. Since $\mathcal{E}$ is compact, there exists a convergent subsequence, $\{b_{n_i}\}$, of $\{b_n\}$, such that $\{b_{n_i}\} \to b \in \mathcal{E}$. Then, since $f$ is continuous, $f(b_{n_i})$, which is a subsequence of $f(a_n)$ converges to $f(b) \in f(\mathcal{E})$. Thus, $f(\mathcal{E})$ is compact. $\square$
+
+
+$\newline$
+[Extreme Value Theorem]Let $\mathcal{E}\subseteq \mathbb{R}$ be compact, and $\mathcal{E}\subseteq \mathcal{D}$, where $\mathcal{D}$ is the domain of a function $f$.  Suppose $f$ is continuous.  Then $f$ attains its maximum and minimum on $\mathcal{E}$, i.e., there is an $e\in \mathcal{E}$ such that $f(e)\geq f(x)$ for all $x\in \mathcal{E}$, and likewise for `$\leq$'.
+
+Proof:
+
+From the theorem above, we have $f(\mathcal{E})$ is compact, then $f(\mathcal{E})$ is bounded.
+
+Let $A = \inf(f(e) : e \in \mathcal{E})$, then there exists a sequence $\{ x_n \}$ in $\mathcal{E}$ such that $\lim_{n \to \infty} \{f(x_n)\} \to A$. Since $\mathcal{E}$ is compact, there exists a convergent subsequence $\{x_{n_i}\} \to x \in \mathcal{E}$ of $\{x_n\}$. 
+
+Then, $f(x) = f(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} \{f(x_n)\} = A$. So, $f(x) \leq f(e)$ for all $e \in \mathcal{E}$, or $f$ attains its minimum on $\mathcal{E}$.
+
+Similar argument can be made to $\sup$, so $f$ attains its maximum on $\mathcal{E}$. $\square$
+
+\end{document}

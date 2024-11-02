@@ -1,0 +1,37 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+
+Suppose $a_k$ is a decreasing sequence such that $a_k \geq 0$ for all $k \in \mathbb{N}$. Prove that the series $\Sigma^{\infty}_{k=1} a_k$ converges if and only if the series $\Sigma^{\infty}_{k=0} 2^ka_{2^k}$ converges.
+
+$\newline$
+Note that since $a_k \geq 0$, both series are monotone. So we only have to show that a series is bounded if and only if the other is bounded. Let the partial sum series of $\Sigma a_k$ and $\Sigma 2^ka_{2^k}$ be $T_m = \Sigma^m_{m=1}a_m$ and $S_m = \Sigma^m_{m=0} 2^m a_{2^m}$.
+
+$\newline$
+Suppose $\Sigma~ a_k$ is bounded, so $T_m$ is also bounded. Note that, for any $k \in \mathbb{N}$,
+
+$T_{2^k} = a_1 + a_2 + a_3 + \dots + a_{2^k}$
+
+$\hspace{.6cm}= a_1 + a_2 + (a_3 + a_4) +\dots + (a_{2^{k-1}+1} + \dots + a_{2^k})$
+
+$\hspace{.6cm}\geq a_1 + a_2 + 2a_4 + \dots + 2^{k-1}a_{2^k} = \frac{1}{2}(S_k + a_1)$
+
+So, $2T_{2^k} -a_1 \geq S_k$, and since $T_{2^k}$ is bounded, $S_k$ and $\Sigma^{\infty}_{k=0} 2^ka_{2^k}$ is bounded and converges by Monotone Convergence Theorem.
+
+$\newline$
+Suppose $\Sigma ~2^k a_{2^k}$ is bounded, so $S_m$ is also bounded. Note that, for any $k \in \mathbb{N}$,
+
+$S_k = a_1 + 2a_2 + 4a_4 + \dots + 2^ka_{2^k}$
+
+$\hspace{.6cm}\geq a_1 + (a_2 +a_3) + (a_4 + a_5 +a_6 + a_7) + \dots + (a_{2^k} + \dots + a_{2^{k+1}-1})$
+
+$\hspace{.6cm}= T_{2^{k+1}-1}$
+
+So, for any $m \in \mathbb{N}$ such that $m \le 2^{k+1}-1$, we have that $S_k \geq T_{2^{k+1}-1} \geq T_m$, and since $S_k$ is bounded, $T_m$ and $\Sigma^{\infty}_{k=1} a_k$ is bounded and converges by Monotone Convergence Theorem. $\square$
+\end{document}

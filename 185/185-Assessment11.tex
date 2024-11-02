@@ -3,8 +3,6 @@
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{systeme}
-\usepackage{xcolor}
-\usepackage{soul}
 \usepackage{graphicx} % Required for inserting images
 
 \begin{document}
@@ -17,9 +15,9 @@
 Proof:
 \begin{enumerate}
     \item Base case: $n = 1$: $1^2 = \frac{1\times 2\times 3}{6}$.
-
+    
     Induction hypothesis: let $1^2 + \dots k^2 = \frac{k(k+1)(2k+1)}{6}$.
-
+    
     Consider $1^2 + \dots + k^2 + (k+1)^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2$\\$ = \frac{(k+1)(2k^2+k + 6(k+1))}{6} = \frac{(k+1)(2k^2 + 7k + 6)}{6} = \frac{(k+1)(k+2)(2(k+1)+1)}{6}$.
 
     Thus, $\sum\limits_{i=1}^ni^2=1+4+9+\cdots+n^2=\frac{n(n+1)(2n+1)}{6}$.
@@ -29,15 +27,15 @@ Proof:
     For each $k$, $m_k = \inf(x^2|x \in [\frac{k-1}{2^n}, \frac{k}{2^n}]) = \frac{(k-1)^2}{4^n}$ and $M_k = \sup(x^2|x \in [\frac{k-1}{2^n}, \frac{k}{2^n}]) = \frac{k^2}{4^n}$.
 
     Then, $L(f, P) = \sum\limits_{k=1}^{2^n} m_k(\frac{k}{2^n} - \frac{k-1}{2^n}) $
-
+    
     $\hspace{2.25cm}= \sum\limits_{k=1}^{2^n} \frac{(k-1)^2}{4^n} \times \frac{1}{2^n}$
-
+    
     $\hspace{2.25cm}= \frac{2^n(2^n-1)(2^{n+1}-1)}{6\times8^n}$
-
+    
     $ \hspace{2.25cm}= \frac{2^{2n+1} -2^{n+1} - 2^n +1}{6\times4^n} $
-
+    
     $\hspace{2.25cm}= \frac{2\times4^n}{6\times4^n} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} $
-
+    
     $\hspace{2.25cm}= \frac{1}{3} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}$
 
     As $L(f) = \sup\{ L(f, P) | P \textit{ is a partition}\}$, $L(f) = \frac{1}{3}$.
@@ -45,17 +43,18 @@ Proof:
     Similarly, $U(f, P) = \sum\limits_{k=1}^{2^n} M_k(\frac{k}{2^n} - \frac{k-1}{2^n}) $
 
     $\hspace{2.85cm}= \sum\limits_{k=1}^{2^n} \frac{k^2}{4^n} \times \frac{1}{2^n}$
-
+    
     $\hspace{2.85cm}= \frac{2^n(2^n+1)(2^{n+1}+1)}{6\times8^n}$
-
+    
     $ \hspace{2.85cm}= \frac{2^{2n+1} +2^{n+1} + 2^n +1}{6\times4^n} $
-
+    
     $\hspace{2.85cm}= \frac{2\times4^n}{6\times4^n} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} $
-
+    
     $\hspace{2.85cm}= \frac{1}{3} + \frac{2}{6\times2^n} + \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}$
 
     As $U(f) = \inf \{ U(f, P) | P \textit{ is a partition}\}$, $U(f) = \frac{1}{3}$.
 
     Since $U(f) = L(f) = \frac{1}{3}$, $\int_{0}^1 x^2 \textit{dx}$ exists and $\int_{0}^1 x^2 \textit{dx} = \frac{1}{3}$. $\square$
 \end{enumerate}
+
 \end{document}

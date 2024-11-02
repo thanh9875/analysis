@@ -1,0 +1,45 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+
+[Cauchy Condensation Test] Let $\{a_k\}$ be a sequence such that:
+\begin{enumerate}
+
+\item $a_1\geq a_2\geq a_3\geq\cdots\geq a_k\geq a_{k+1}\geq\cdots$
+\item $a_k\geq 0$ for all $k\in\mathbb{N}$
+\end{enumerate}
+
+Then the series $\sum_{k=1}^\infty a_k$ converges if and only if $\sum_{k=0}^\infty 2^ka_{2^k}$ converges.
+
+$\newline$
+Corollary: The series $\sum_{k=1}^\infty\frac{1}{k^p}$ converges if and only if $p>1$.
+
+Proof: 
+
+For any $k \in \mathbb{N}$, let $a_k \coloneqq \frac{1}{k^p} > 0$. It is easy to see that $a_k > a_{k+1}$.
+
+Note the series:
+
+$\sum\limits_{k=1}^{2^n}\frac{1}{k^p}$
+
+$= \frac{1}{1^p} + \frac{1}{2^p} + \frac{1}{3^p} + \dots + \frac{1}{2^{np}}$
+
+$\le \frac{1}{1^p} + \frac{1}{2^p} + \frac{1}{2^p} + \dots + \frac{1}{2^{n-1}p}$
+
+$\le \frac{1}{1^p} + \frac{2}{2^p} + \dots + \frac{2^{n-1}}{2^{(n-1)p}} $
+
+$\le \sum\limits_{k=0}^{n-1} 2^k a_{2^k} = \sum\limits_{k=0}^{n-1} \frac{1}{2^{k(p-1)}} $
+
+Consider the series $\sum\limits_{k=0}^\infty 2^ka_{2^k} = \sum\limits_{k=0}^\infty \frac{2^k}{2^{kp}} = \sum\limits_{k=0}^\infty \frac{1}{2^{k(p-1)}}$.
+
+If $p \le 1$, $\frac{1}{2^{k(p-1)}} \geq 1$, then by Comparison Test, $\sum\limits_{k=0}^\infty \frac{1}{2^{k(p-1)}}$ diverges.
+
+So, by Cauchy Condensation Test, the series $\sum\limits_{k=1}^\infty\frac{1}{k^p}$ converges if and only if $p > 1$. $\square$
+
+\end{document}

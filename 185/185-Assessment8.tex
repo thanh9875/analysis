@@ -1,0 +1,32 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+\begin{document}
+
+Suppose that $f_n$ converges to $f$ pointwise on some $D\subseteq \mathbb{R}$.  For each of the following statements, find a counter example disproving the claim.
+\begin{enumerate}
+\item If each $f_n$ is uniformly continuous, then $f$ is uniformly continuous.
+\item If each $f_n$ is bounded, then $f$ is bounded.
+\item If each $f_n$ has a finite number of discontinuities, then $f$ has a finite number of discontinuities.
+\end{enumerate}
+
+Proof: 
+\begin{enumerate}
+    \item Define $f_n(x) = x^n$ and $D = [0,1]$. For all $n$, $f_n(x)$ is continuous over the closed interval $[0,1]$, so $f_n(x)$ is uniformly continuous.
+
+    Note that $f_n(x)$ converges pointwise to \[f(x) = \begin{cases} 1 & x = 1 \\ 0 & \textit{else}\end{cases}\]which is not continuous. 
+
+    \item Define \[f_n(x) = \begin{cases} n & x > n \\ x & -n \le x \le n \\ -n & x < -n \end{cases}\]
+
+    Define $f(x) = x$. Note that $f_n$ converges to $f$ pointwise by choosing $N \geq |x_0|$. Finally, for each $n$, $f_n$ is bounded by $n$, and $f$ is unbounded.
+
+    \item Define \[f_n(x) = \begin{cases} 1 & x=n \\ 0 &\textit{else} \end{cases} \]
+
+    Define $f(x) = 0$. Note that, for each $n$, $f_n(x)$ has exactly one discontinuities, and $f_n(x)$ converges to $f(x)$ pointwise by choosing $N \geq x_0$. Finally, $f(x)$ does not have any discontinuities.
+
+\end{enumerate}
+
+\end{document}

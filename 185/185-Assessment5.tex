@@ -1,0 +1,33 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+Theorem 0.1: A set $\mathcal{O} \subseteq \mathbb{R}$ is open if and only if $\mathcal{O}^c$ is closed.
+
+Proof:
+
+If $\mathcal{O}\subseteq \mathbb{R}$ is open, let $x \in \mathcal{O}^{c'}$. Then for all $\epsilon > 0$, there exists\\ $a \in B_{\epsilon}(x) \cap (\mathcal{O}^c \setminus \{ x\})$ such that $a \in \mathcal{O}^c$. \hl{This means, for all $\epsilon$, there exists $a \in B_\epsilon(x)$ and $a \in \mathcal{O}^c$.} Thus $x \not \in \mathcal{O}$, or $\mathcal{O}^{c'} \subseteq \mathcal{O}^c$. So $\mathcal{O}^c$ is closed.
+
+If $\mathcal{O}^{c}$ is closed, let $x \in \mathcal{O}$. Since $x \not \in \mathcal{O}^c$, $x \not \in \mathcal{O}^{c'}$, \\then there exists an $\epsilon > 0$ such that the $\epsilon$-neighborhood about $x$ does not intersect $(\mathcal{O}^c \setminus \{ x\})$. So that $\epsilon$-neighborhood is in $\mathcal{O}$, so $\mathcal{O}$ is open. $\square$
+$\newline$
+
+Corollary 0.2. The union of a finite collection of closed sets is closed. The intersection of an arbitrary collection of closed sets is closed. 
+
+Proof:
+
+In either cases, it suffices to show that the union and intersection of 2 closed sets is closed.
+
+Let $\mathcal{A}, \mathcal{B}$ be closed sets, so by Theorem 0.1, $\mathcal{A}^c$ and $\mathcal{B}^c$ are open. 
+
+Since $\mathcal{A} \cup \mathcal{B} = (\mathcal{A}^c \cap \mathcal{B}^c)^c$, and $\mathcal{A}^c$ and $\mathcal{B}^c$ are open, the complement of their intersection is closed, and $\mathcal{A} \cup \mathcal{B}$ is closed.
+
+Since $\mathcal{A} \cap \mathcal{B} = (\mathcal{A}^c \cup \mathcal{B}^c)^c$, and $\mathcal{A}^c$ and $\mathcal{B}^c$ are open, the complement of their union is closed, and $\mathcal{A} \cap \mathcal{B}$ is closed. $\square$
+
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+\begin{enumerate}
+\item Prove that bounded $f(x)$ is Riemann Integrable on $[a,b]$ if and only if for all $\epsilon>0$, there exists a partition $P_\epsilon$ of $[a,b]$ such that \\$U(f,P_\epsilon)-L(f,P_\epsilon)<\epsilon$.
+\item Prove that if $f(x)$ is continuous on $[a,b]$, then $f(x)$ is Riemann Integrable.
+
+\end{enumerate}
+
+Proof:
+
+\begin{enumerate}
+    \item Let $\epsilon > 0$.
+    
+    Assume there exists a partition $P$ of $[a,b]$ such that $U(f, P) - L(f, P) < \epsilon$.
+
+    For any partition $P$, $U(f) \le U(f,P)$ and $L(f,P) \le L(f)$, \\ $U(f) - L(f) \le U(f,P) - L(f,P) < \epsilon$, so $U(f) = L(f)$, so $f$ is Riemann Integrable.
+
+    Assume $f$ is Riemann Integrable, so $U(f) = L(f)$. From the definition of $\inf$, there exists a partition $P_1$ such that $U(f, P_1) - U(f) < \frac{\epsilon}{2}$. Similarly, there exists a partition $P_2$ such that $L(f) - L(f, P_2) < \frac{\epsilon}{2}$. 
+
+    Let $P = P_1 \cup P_2$, so $P$ is a refinement of both $P_1$ and $P_2$. Then \\$U(f, P) - U(f) < U(f, P_1) - U(f) < \frac{\epsilon}{2}$ and \\$L(f) - L(f, P) < L(f) - L(f, P_2) < \frac{\epsilon}{2}$. 
+    
+    Finally, we have that $\epsilon > U(f, P) - U(f) + L(f) - L(f, P)$
+    
+    $\hspace{3cm}\textit{or } \epsilon > U(f,P) - L(f,P)$. $\square$
+
+    \item Let $\epsilon > 0$.
+
+    $f$ is continuous over a bounded interval, so $f$ is uniformly continuous over $[a,b]$, then there exists $\delta > 0$ such that for any $x, y \in [a,b]$, \\$|a-b| < \delta$ implies $|f(x) -f(y)| < \frac{\epsilon}{b-a}$.
+
+    Let $P_n$ be a partition that for any $k \in [1,n], x_{k} - x_{k-1} < \delta$. Then 
+
+    $U(f, P_n) - L(f, P_n) = \sum\limits^n_{k=1} M_k (x_k - x_{k-1})- \sum\limits^n_{k=1} m_k (x_k - x_{k-1}) $
+
+    $\hspace{3.1cm} = \sum\limits^n_{k=1} (M_k - m_k) (x_k - x_{k-1})$
+
+    $\hspace{3.1cm}< \frac{\epsilon}{b-a} \sum\limits^n_{k=1} (x_k - x_{k-1}) $
+    
+    $\hspace{3.1cm}< \frac{\epsilon}{b-a} (b-a) $
+
+    $\hspace{3.1cm}< \epsilon$
+
+    So from Part $1$, $f$ is Riemann Integrable. $\square$
+\end{enumerate}
+
+\end{document}

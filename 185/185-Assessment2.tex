@@ -1,0 +1,89 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+(Alternating series test) Let $\{a_n\}$ be a sequence such that:
+
+\begin{enumerate}
+
+\item $a_1 \geq a_2 \geq a_3 \geq \dots \geq a_n \geq a_{n+1} \geq \dots$
+
+\item $a_n \to 0$
+
+\end{enumerate}
+
+then the series $\sum_{n=1}^\infty(-1)^{n+1}a_n$ converges. 
+
+Proof:
+
+Let $\epsilon > 0$.
+
+Since the series $a_n$ is a nonincreasing series and converges to $0$, \\$\forall n \in \mathbb{N}, a_n \geq 0$ and there exists $N \in \mathbb{N}$ such that for any $n \geq N$, $|a_n| < \epsilon$.
+
+Define the partial sum $S_n \coloneqq a_1 - a_2 +a_3 \dots +(-1)^{n+1}a_n$. We will show that, for any $m > n \geq N$, we have $|S_m - S_n| \le a_{n+1} \le |a_{n+1}| <\epsilon$.
+
+If $m-n$ is even, we have the following: 
+
+$|S_m - S_n| = \pm (S_m - S_n)  $
+
+$\hspace{1.6cm}= a_{n+1} - a_{n+2} + ~\dots ~+a_{m-1} -a_m$
+
+$\hspace{1.6cm}=a_{n+1} - (a_{n+2} -a_{n+3}) -~ \dots~ -(a_{m-2} - a_{m-1}) -a_m $
+
+$\hspace{1.6cm} \le a_{n+1} < \epsilon$.
+
+If $m-n$ is odd, we have the following:
+
+$|S_m - S_n| = \pm (S_m -S_n)$
+
+$\hspace{1.6cm}= a_{n+1} - a_{n+2} +~ \dots~ -a_{m-1} +a_m$
+
+$\hspace{1.6cm}= a_{n+1} - (a_{n+2} -a_{n+3}) -~ \dots~  - (a_{m-1} -a_m) $
+
+$\hspace{1.6cm}\le a_{n+1} < \epsilon$.
+
+So the sequence of partial sum is Cauchy convergent, thus the alternating series converges. $\square$
+
+(Generalized Comparison Test) Let $\{a_n\}$ and $\{b_n\}$ be sequences such that there exists an $N\in\mathbb{N}$ with $0\leq a_n\leq b_n$ for all $n\geq N$.  Then
+\begin{enumerate}
+
+\item If $\sum_{k=1}^\infty b_k$ converges, then so does $\sum_{k=1}^\infty a_k$
+\item If $\sum_{k=1}^\infty a_k$ diverges, then so does $\sum_{k=1}^\infty b_k$
+\end{enumerate}
+
+Proof:
+
+\begin{enumerate}
+
+\item If $\sum_{k=1}^\infty b_k$ converges, $\sum_{k=N}^\infty b_k$ converges, and by Comparison Test, $\sum_{k=N}^\infty a_k$ converges, then so does $\sum_{k=1}^\infty a_k$. 
+
+\item Proof by contrapositive of above. $\square$
+
+\end{enumerate}
+
+$\newline$
+(Ratio Test) Let $\{a_n\}$ be a sequence such that
+\begin{enumerate}
+\item $a_n\neq0$
+\item $\lim_{n\rightarrow\infty}\left|\frac{a_{n+1}}{a_n}\right|=r<1$
+\end{enumerate}
+Then the series $\sum_{n=1}^\infty a_n$ converges absolutely.
+
+Proof:
+
+Let $\epsilon = \frac{1-r}{2} > 0$.
+
+Since $\lim_{n\rightarrow\infty}\left|\frac{a_{n+1}}{a_n}\right|=r < 1$, with the $\epsilon$ above, there exists an $N \in \mathbb{N}$ such that for all $n \geq N$, we have the following: 
+
+$\hspace{3cm}||\frac{a_{n+1}}{a_n}| - r| < \epsilon = \frac{1-r}{2}$
+
+$\hspace{2.6cm}\Leftrightarrow|\frac{a_{n+1}}{a_n}| - r \le ||\frac{a_{n+1}}{a_n}| - r| < \frac{1-r}{2}$
+
+$\hspace{2.6cm}\Leftrightarrow|\frac{a_{n+1}}{a_n}| < \frac{1-r}{2} + r = \frac{r+1}{2}$
+
+Let $r_0 = \frac{r+1}{2} < 1$, so $|a_{n+1}| < r_0|a_n|$. Observe that, for any $k \in \mathbb{N}$, \\$|a_{n+k}| < r_0~|a_{n+k-1}| < r_0^2~|a_{n+k-2}| < \dots < r_0^k~|a_n|$. Then the series \\$\sum_{n=N}^\infty |a_n| < \sum_{n=N}^\infty r_0^n|a_n|$, which is a geometric series and $r_0 < 1$, so it converges, and by Comparison Test, $\sum_{n=N}^\infty |a_n|$ converges. Thus $\sum_{n=1}^\infty |a_n|$ converges and $\sum_{n=1}^\infty a_n$ converges absolutely. $\square$
+\end{document}
