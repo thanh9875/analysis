@@ -1,0 +1,24 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+Prove that if $f:[a,b]\rightarrow\mathbb{R}$ is continuous and $\int_a^x fdx=0$ for all $x\in[a,b]$, then $f(x)=0$ everywhere on $[a,b]$.  Find an example to show that the implication is not true if continuity is not in the hypothesis.
+
+
+Proof:
+
+Let $F$ be a function such that $F' = f$. By Fundamental Theorem of Calculus, for all $x \in [a,b]$, $\int_a^x fdx=0 = F(x)-F(a)$. Then, for all $x \in [a,b]$, $F(x) = c$ for some $c \in \mathbb{R}$.
+
+For any $x \in \mathbb{R}$, $f(c) = F'(c) = \lim \limits_{x\to } \frac{F(x) - F(c)}{x-c} = \lim \limits_{x\to c} 0 = 0$. Thus $f(x) = 0$ everywhere on $[a,b]$.
+
+Conterexample: let \[ f(x)= \begin{cases}1 & x = \frac{1}{2} \\ 0 & \textit{else} \end{cases}\]
+
+For all $x \in [0,1]$, $\int_0^x fdx=0$ and $f$ is not continuous. And $f(x)$ does not equal to $0$ everywhere on $[0,1]$. $\square$
+\end{document}
