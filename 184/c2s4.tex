@@ -1,0 +1,54 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{graphicx} % Required for inserting images
+
+\title{c2s4}
+
+\begin{document}
+1.
+Let $\{ x_n \}^\infty_{n=1}$ and $\{ y_n\}^\infty_{n=1}$ such that $\lim_{n \rightarrow\infty}y_n = 0$. Suppose that for all $k \in \mathbb{N}$ and for all $m \geq k$, we have
+
+$\hspace{5cm} |x_m - x_k| \le y_k$
+
+Show that $\{ x_n \} ^\infty_{n=1}$ is Cauchy. 
+
+Proof:
+
+Let $\epsilon >0$ be given 
+
+Since $\lim_{n \rightarrow\infty}y_n = 0$, we have that $\exists N \in\mathbb{N}$ such that $\forall k > N$, we have 
+
+$\hspace{5cm}|y_k| < \epsilon$
+
+Observe that:
+
+$\hspace{5cm} |x_m - x_k| \le y_k \le |y_k| <\epsilon$
+
+So, $\{ x_n \}^\infty_{n=1}$ is Cauchy. $\square$
+
+
+3. Prove or disprove: A Cauchy sequence can have an unbounded subsequence. 
+
+Proof: 
+
+Let $\{x_n\}$ be a Cauchy sequence. So $\{x_n\}$ is bounded, so $\exists M \in \mathbb{R}$ such that $\forall n\in \mathbb{N}, x_n \le M$. So any subsequence $\{ x_{n_k}\}$ will be bounded by $M$. So, there is not a subsequence of $\{x_n\}$ that is unbounded. $\square$
+
+
+2. Suppose $|x_n-x_k| \le \frac{n}{k^2}$ for all $n$ and $k$. Show that $\{x_n\}^\infty_{n=1}$ is Cauchy. 
+
+Proof: 
+
+Let $\epsilon > 0 $ be given. 
+
+Let $ N \in \mathbb{N}$ such that $ N > \frac{1}{\epsilon}$. Then $\forall n \geq N$, and any $k \in \mathbb{N}$, we have the following: 
+
+$\hspace{2.5cm} \epsilon > \frac{1}{n} = \frac{n}{n^2} > \frac{n}{(n+k)^2}\hspace{3cm} (1)$
+
+Since $|x_n-x_k| \le \frac{n}{k^2}$ for all $n$ and $k$, it is also true when $k = n+k$, then
+
+$\hspace{2cm} (1) \Leftrightarrow \epsilon > \frac{n}{(n+k)^2} > |x_n -x_{n+k}|$
+
+Since $n$ and $n+k$ is any number larger than $N$, we have that $\{x_n\}^\infty_{n=1}$ is Cauchy. $\square$
+\end{document}

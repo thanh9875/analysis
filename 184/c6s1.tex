@@ -1,0 +1,34 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+2. Suppose there exists a sequence of function $\{g_n\}^\infty_{n=1}$ uniformly converging to $0$ on $A$. Suppose we have a sequence of functions $\{f_n\}^\infty_{n=1}$ and a function $f$ on $A$ such that $|f_n(x)-g_n(x)| \le g_n(x)$ for all $x \in A$. Show that $\{f_n\}$ converges uniformly to $f$ on $A$.
+
+Let $\epsilon > 0$.
+
+Then there exists $N \in \mathbb{N}$ such that for all $n\geq N$, $|g_n(x) - 0| = |g_n(x)| \le \epsilon$. 
+
+So, for all $n\geq N$ and $x \in A$, $|f_n(x) - f(x)| \le g_n(x) \le |g_n(x)| \le \epsilon$. 
+
+Thus $f_n$ converges uniformly to $f$ in $A$. $\square$
+
+$\newline$
+
+3. Suppose $\{f_n\}$ and $\{g_n\}$ converge uniformly to $f$ and $g$ on some set $A$. Show that $\{f_n+g_n\}$ converges uniformly to $f+g$ on $A$.
+
+Let $\epsilon > 0$. 
+
+Since $f_n$ converges to $f$ uniformly, there exists $N_1 \in \mathbb{N}$ such that for all $n \geq N_1$ and $x \in A$, $|f_n(x)-f(x)| \le \frac{\epsilon}{2}$. 
+
+Since $g_n$ converges to $g$ uniformly, there exists $N_2 \in \mathbb{N}$ such that for all $n \geq N_2$ and $x \in A$, $|g_n(x)-g(x)| \le \frac{\epsilon}{2}$.
+
+So, with $N = max(N_1, N_2)$, then for all $n \geq N$ and $x \in A$, we have that $|f_n(x)+g_n(x)-f(x)-g(x)| \le |f_n(x)-f(x)|+|g_n(x)-g(x)| \le \epsilon$. 
+
+Thus $\{f_n+g_n\}$ converges uniformly to $f+g$. $\square$
+
+4. 
+\end{document}

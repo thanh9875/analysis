@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\linespread{2.0}
+\usepackage{mathtools}
+\usepackage{graphicx} % Required for inserting images
+
+\title{c2s2}
+
+\begin{document}
+1. 
+
+$\hspace{0.5cm}$Prove that if $\{ x_{n} \}$  is a convergent sequence, $k \in \mathbb{N}$, then 
+
+$\hspace{5cm} \lim_{n\rightarrow \infty}x^k_{n} = (\lim_{n \rightarrow \infty}x_{n})^k  $
+
+$\hspace{0.5cm}$Let $\lim_{n \rightarrow \infty} x_{n} = a$. We WTS that $(\lim_{n \rightarrow \infty}x_{n})^k = a^k$ by induction. 
+
+$\hspace{0.5cm}$Base case: $k=1$, then we have $\lim_{n \rightarrow \infty} x_{n} = a$ and $\lim_{n \rightarrow \infty} x_{n}^1 =\lim_{n \rightarrow \infty} x_{n}= a^1$, which is true.
+
+$\hspace{0.5cm}$Induction hypothesis: Suppose that $\lim_{n \rightarrow \infty} x^k_{n} = a^k$. 
+
+$\hspace{0.5cm}$We will prove that $\lim_{n \rightarrow \infty} x^{k+1}_{n} = a^{k+1}$.
+
+$\hspace{0.5cm}$Note that $x^{k+1}_{n} = x^k_{n} \times x_{n}$, and both sequences $\{x_n \}$ and $\{x^k_n \}$ converge, so:
+
+$\hspace{2cm} \lim_{n\rightarrow\infty}x^{k+1}_n = \lim_{n\rightarrow\infty}x^k_n \times \lim_{n\rightarrow\infty}x_n = a^k \times a = a^{k+1}$
+
+$\hspace{0.5cm}$So, $\lim_{n\rightarrow\infty}x^{k+1}_n = a^{k+1}$. $\square$
+
+2. 
+
+Prove or disprove: if $\{ x_n\}^\infty_{n=1}$ is a sequence such that $\{ x^2_n \}^\infty_{n=1}$ converges, then $\{ x_n\}^\infty_{n=1}$ converges.
+
+Counterexample:  let $x_n = (-1)^n$, then $\{ x^2_n \}^\infty_{n=1} = \{ 1^n\}^\infty_{n=1} = \{1, 1, 1, \dots\}$, and this sequence 
+converges to $1$. Meanwhile, $\{ x_n\}^\infty_{n=1} = \{ -1, 1, -1, \dots \}$, and this sequence diverges.  $\square$
+
+3. 
+
+$\hspace{0.5cm}$Let $\{a_n\}, \{b_n\}$ be sequences. 
+
+$\hspace{0.5cm}$(a) Suppose $\{a_n\}$ is bounded and $\{b_n\}$ converges to 0. Show that $\{ a_nb_n \}$ converges to 0. 
+
+$\hspace{0.5cm}$Since $\{a_n\}$ is bounded, $\exists M \in \mathbb{R}$, such that $\forall n \in \mathbb{N}, |x_n| \le M$.
+
+$\hspace{0.5cm}$Since $\{ b_n \}$ converges to 0, $\forall \epsilon >0, \exists N \in \mathbb{N}$, such that $\forall n \geq N, |b_n| < \frac{\epsilon}{M}$.
+
+$\hspace{0.5cm}$Note that, given $\epsilon > 0$ and $n\geq N$,  $|a_nb_n| = |a_n||b_n| < M \times \frac{\epsilon}{M} = \epsilon$, thus $\{a_nb_n\}$ converges to 0. $\square$
+
+$\hspace{0.5cm}$(b) Find an example where $\{a_n\}$ is unbounded, $\{b_n\}$ converges to 0, and $\{a_nb_n\}$ diverges. 
+
+$\hspace{0.5cm}$It is clearly that the sequence $\{a_n\}$ where $a_n = n^2$ is unbounded. 
+
+$\hspace{0.5cm}$The sequence $\{b_n\}$ where $b_n = \frac{1}{n}$ converges to $0$, 
+
+$\hspace{0.5cm}$Note that, then the sequence $\{ a_nb_n\}$ will be defined as $\{ n^2\times \frac{1}{n}\}^\infty_{n=1} =\{n\}^\infty_{n=1}$, and this sequence is unbounded. $\square$
+
+$\hspace{0.5cm}$(c) Find an example where $\{a_n\}$ is bounded, $\{b_n\}$ converges to some $x\neq 0$, and $\{a_nb_n\}$ is not convergent. 
+
+$\hspace{0.5cm}$Let $\epsilon > 0$ be given. Let the sequence $\{a_n\}$ defined by $a_n = (-1)^n$. Clearly, this sequence is bounded since we have that $\forall n\in\mathbb{N}, a_n < 2$. 
+
+$\hspace{0.5cm}$Let the sequence $\{ b_n\}$ defined by $b_n = 1$. This sequence converges to $1$, since $\forall n>10$, we have $|b_n - 1| = 0 < \epsilon$. 
+
+$\hspace{0.5cm}$Finally, the sequence $\{a_nb_n\}$ will be just $\{(-1)^n\}^\infty_{n=1}$, and this sequence diverges. $\square$
+
+4. 
+
+Prove that $\lim_{n\rightarrow \infty}(n^2+1)^{\frac{1}{n}} = 1$. 
+
+First, we want to prove that $\lim_{n\rightarrow\infty}n^{\frac{1}{n}} =1 $. 
+
+Let $\epsilon > 0$ be given. 
+
+Let $N$ be the smallest integer larger than $\frac{2}{\epsilon^2}+1$, then $\forall n > N$, we have
+
+$\hspace{3cm} n > \frac{2}{\epsilon^2}+1$
+
+$\hspace{2.5cm} \Leftrightarrow n-1 > \frac{2}{\epsilon^2}$
+
+$\hspace{2.5cm} \Leftrightarrow \frac{1}{n-1} < \frac{\epsilon^2}{2}$
+
+$\hspace{2.5cm} \Leftrightarrow \frac{2}{n-1} < \epsilon^2$
+
+$\hspace{2.5cm} \Leftrightarrow n < \frac{n(n-1)}{2}\epsilon^2$
+
+From binomial theorem, we have that
+
+$\hspace{.5cm} (\epsilon +1)^n = {n\choose 0}\epsilon^n + {n\choose 1}\epsilon^{n-1} + \dots + {n\choose n-2}\epsilon^2 + {n\choose n-1}\epsilon + 1 >{n\choose n-2}\epsilon^2 = \frac{n(n+1)}{2}\epsilon^2$
+
+From above, we have that
+
+$\hspace{3cm} n < \frac{n(n-1)}{2}\epsilon^2 < (\epsilon+1)^n$
+
+$\hspace{2.5cm} \Leftrightarrow n^{\frac{1}{n}} < \epsilon+1$
+
+$\hspace{2.5cm} \Leftrightarrow |n^{\frac{1}{n}} - 1| < \epsilon$
+
+So,  $\forall n > N$, we have $|n^{\frac{1}{n}} - 1| < \epsilon$,  so $\lim_{n\rightarrow\infty}n^{\frac{1}{n}} =1 $.
+
+Note that 
+
+$\hspace{3cm} (n^2)^{\frac{1}{n}}<(n^2+1)^{\frac{1}{n}} < (n^2+2n+1)^{\frac{1}{n}}$
+
+
+$\hspace{2.5cm} \Leftrightarrow \lim_{n\rightarrow \infty}n^{\frac{2}{n}}<\lim_{n\rightarrow \infty}(n^2+1)^{\frac{1}{n}} < \lim_{n\rightarrow \infty}(n+1)^{\frac{2}{n}}$
+
+
+From $\lim_{n\rightarrow\infty}n^{\frac{1}{n}} =1$, we have that  $\lim_{n\rightarrow \infty}n^{\frac{2}{n}}=\lim_{n\rightarrow \infty}(n+1)^{\frac{2}{n}} =1$, then by Squeeze lemma, we have that $\lim_{n\rightarrow \infty}(n^2+1)^{\frac{1}{n}}=1$. $\square$
+
+\end{document}

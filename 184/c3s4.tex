@@ -1,0 +1,102 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+
+\title{c3s4}
+
+1. Show that $f: (0, \infty) \rightarrow \mathbb{R}$ defined by $f(x) \coloneqq sin(\frac{1}{x})$ is not uniformly continuous. 
+
+Let $\epsilon = 2$. 
+
+Let $x_n = \frac{1}{\frac{\pi}{2}+2n\pi}$ and $y_n = \frac{1}{\frac{3\pi}{2}+2n\pi}$. 
+
+Consider $|f(x) - f(y)| = |\sin(\frac{\pi}{2} + 2n\pi) - \sin(\frac{3\pi}{2} + 2n\pi)| = |\sin{\frac{\pi}{2}} - \sin{\frac{3\pi}{2}}| = 2 \geq \epsilon$,
+
+while $|x_n - y_n| = |\frac{1}{\frac{\pi}{2}+2n\pi}- \frac{1}{\frac{3\pi}{2}+2n\pi}| = |\frac{2}{\pi+2n\pi} - \frac{2}{3\pi+2n\pi}| = \frac{2}{\pi}|\frac{1}{4n+1}-\frac{1}{4n+3}| = \frac{2}{\pi}|\frac{2}{(4n+1)(4n+3)}|$.
+
+Since $|\frac{2}{(4n+1)(4n+3)}|$ can be made arbitrarily small, $f$ is uniformly continuous. $\square$
+
+$\newline$
+
+2. Let $f: S \rightarrow \mathbb{R}$ be uniformly continuous. Let $A \subset S$. Prove that $f|_{A}$ is uniformly continuous.
+
+Let $\epsilon > 0 $ be given.
+
+Since $f$ is uniformly continuous on $S$, for some $\delta > 0$, $\forall x, y \in S$ that if $|x-y| < \delta$, $|f(x)-f(y)| < \epsilon$.
+
+Then $\forall x, y \in A \subset S$ that if $|x-y| < \delta, |f(x)-f(y)| < \epsilon$. So $f|_{A}$ is uniformly continuous. $\square$
+
+$\newline$
+
+3. Let $A, B$ be intervals. Let $f: A \rightarrow \mathbb{R}$ and $g: B \rightarrow \mathbb{R}$ be uniformly continuous such that $f(x) = g(x)$ for all $x \in A \cap B$. Define the function
+
+$\hspace{3cm}h(x) = \begin{cases} 
+          f(x) & x\in A \\
+          g(x) & x\in B \setminus A
+       \end{cases}$
+
+Prove that $h$ is uniformly continuous.
+
+Let $x, y \in A \cup B$. 
+
+Let $\epsilon > 0$ be given.
+
+Case 1: $x$ and $y$ both in $A$ or $B$. 
+
+Then, for either $f$ or $g$, $\exists \delta > 0$ such that if $|x-y| < \delta$, $|h(x) - h(y)|$ will be equal to either $|f(x) - f(y)| < \epsilon$ or $|g(x)-g(y)|<\epsilon$, since both are uniformly continuous. 
+
+Case 2: $x$ and $y$ are in different set.
+
+Assume that $A \cap B \neq \emptyset$.
+
+Let $z \in A \cap B$. 
+
+Since $f$ is uniformly continuous, $\exists \delta_1 > 0$ such that $\forall x, z \in A$ such that if $|x-z| < \delta_1, |f(x)-f(z)| < \frac{\epsilon}{2}$. 
+
+Since $g$ is uniformly continuous, $\exists \delta_2 > 0$ such that $\forall y, z \in B$ such that if $|z-y| < \delta_2$, $ |g(z)-g(y)| < \frac{\epsilon}{2}$.
+
+Then, $\exists \delta_1 + \delta_2 >0$ such that
+
+$\hspace{2cm}|x-y| = |x-z+z-y| \le |x-z| + |z-y| < \delta_1 + \delta_2$,
+
+we have 
+
+$\hspace{2cm}|h(x) - h(y)| =  |f(x)-f(z)+g(z)-g(y)| $
+
+$\hspace{4.1cm}\le |f(x)-f(z)| + |g(z)-g(y)|$
+
+$ \hspace{4.1cm}< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+
+So $h$ is uniformly continuous. $\square$
+
+In case $A \cap B = \emptyset$. 
+
+Consider $A = [1,2)$ and $B = [2,3]$.
+
+Let $f: A \rightarrow \mathbb{R}; x \mapsto x$ and $g: B \rightarrow \mathbb{R}; x \mapsto x^2$.
+
+For any $\epsilon > 0$, let $\delta = \epsilon > 0$. Then for all $x$ and $y$ such that $|x-y| < \delta$, $|f(x) - f(y)| = |x-y| < \delta = \epsilon$. So, $f$ is uniformly continuous.
+
+Since $g$ is a polynomial, it is continuous on closed interval $[2,3]$, the $g$ is uniformly continuous.
+
+We have $1 \le f < 2$ and $4\le g \le 9$, so $2 < |f-g| < 8$.
+
+Let $\epsilon = 1$, then $\forall x \in A, y \in B, |h(x)-h(y)| = |f(x)-g(y)|> \epsilon$, so $h$ is not uniformly continuous.
+
+$\newline$
+
+4. Suppose $f : S \rightarrow \mathbb{R}$ and $g:[0,\infty) \rightarrow [0, \infty)$ are functions, $g$ is continuous at $0$, $g(0)=0$, and whenever $x, y$ are in $S$, we have $|f(x)-f(y)| \le g(|x-y|)$. Prove that $f$ is uniformly continuous. 
+
+Let $\epsilon >0$ be given. 
+
+Since $g$ is continuous at $x=0$, $\exists \delta > 0$ such that $|x-y|-0<\delta$, $|g(|x-y|)-g(0)| = g(|x-y|) < \epsilon$.
+
+For all $x, y \in S$ that $|x-y|<\delta$, we have $|f(x)-f(y)| \le |g(|x-y|)| < \epsilon$. Thus $f$ is uniformly continuous.$\square$
+
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass{article}
+\linespread{2.0}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{graphicx} % Required for inserting images
+
+
+\begin{document}
+1. Use the definition of continuity to directly prove that $f: \mathbb{R} \rightarrow \mathbb{R}; x \mapsto x^2$ is continuous. 
+
+Let $\epsilon > 0$, $c \in \mathbb{R}$ be given. 
+
+Let $\delta > 0$ such that $\delta < \sqrt{\epsilon + c^2}-c$. 
+
+It follows, $\delta - \sqrt{\epsilon+c^2}+c<0$
+
+$\hspace{1cm} \Leftrightarrow(\delta +c-\sqrt{\epsilon +c^2})(\delta+c+\sqrt{\epsilon+c^2})<0$ since both $\delta$ and $ c+\sqrt{\epsilon+c^2}$ are positive
+
+$\hspace{1cm} \Leftrightarrow (\delta+c)^2 - (\epsilon +c^2) < 0$
+
+$\hspace{1cm} \Leftrightarrow \delta^2 + 2c\delta - \epsilon < 0$
+
+$\hspace{1cm} \Leftrightarrow \delta(\delta +2c) < \epsilon$
+
+Note that, with $|x-c|<\delta$, we have $|x+c| < \delta +2c$, so $|x^2-c^2| = |x-c||x+c| < \delta(\delta+2c) < \epsilon$. 
+
+Thus, $f: \mathbb{R} \rightarrow\mathbb{R};x\mapsto x^2$ is continuous.$\square$
+
+2. Define 
+
+$\hspace{3cm} f: \mathbb{R}\rightarrow\mathbb{R}; x\mapsto \systeme{x \hspace{1cm} x \in \mathbb{Q}, x^2 \hspace{.5cm}\textit{else}}$
+
+Prove that $f$ is continuous at $1$ and discontinuous at $2$. 
+
+$(1)$ Let $\{x_n\}$ be any convergent sequence of rational number such that $\{x_n\} \rightarrow 1$
+
+Since $\lim_{n\rightarrow\infty}f(\{x_n\}) = 1$ and $f(1) = 1$, $f$ is continuous at 1. 
+
+$(2)$ Let $\{x_n\}$ be any convergent sequence of irrational number such that $\{x_n\} \rightarrow 2$
+
+Since $\lim_{n\rightarrow\infty}f(\{x_n\}) = 4$, but $f(2) = 2$, $f$ is not continuous at 2.$\square$
+
+3. Give examples of functions $f, g:\mathbb{R} \rightarrow \mathbb{R}$ so that $h(x) \coloneqq f(x)+g(x)$ is continuous but $f$ and $g$ are not continuous.
+
+Let $f: \mathbb{R} \rightarrow \mathbb{R}; x \mapsto \frac{1}{x}$ and $h: \mathbb{R} \rightarrow\mathbb{R}; x\mapsto 1-\frac{1}{x}$. Then $h(x)$ will be $h: \mathbb{R}\rightarrow\mathbb{R}; x\mapsto 1$.
+
+Note that, $f$, $g$ are not continuous at $x=0$, and $h$ is continuous in $\mathbb{R}$. $\square$
+
+4. Suppose $f: S \rightarrow \mathbb{R}$ is continuous. Let $A$ be any nonempty subset of $S$. Prove that $f|_{A}$ is also continuous.
+
+Let $a \in A \subset S$. Since $f$ is continuous in $S$, $f$ is continuous at $x=a$. Thus, $f|_{A}$ is continuous.$\square$
+
+5. Suppose $g: \mathbb{R}\rightarrow\mathbb{R}$ is a continuous function such that $g(0) = 0$ and suppose $f: \mathbb{R} \rightarrow\mathbb{R}$ is such that $|f(x)-f(y)| \le g(x-y)$ for all $x$ and $y$. Show that $f$ is continuous.
+
+Let $\epsilon >0$ and $c \in \mathbb{R}$ be given. 
+
+Since $g$ is continuous at $x=0$, $\exists \delta > 0$ such that $|(x-c)-0|<\delta$, $|g(x-c)-g(0)| = |g(x-c)| < \epsilon$.
+
+Since $|f(x)-f(y)| \le g(x-y)$ for all $x$ and $y$,  it is also true with $y = c$, which is $|f(x)-f(c)| \le g(x-c)$.
+
+Finally, with $|x-c|<\delta$, we have $|f(x)-f(c)| \le g(x-c) \le |g(x-c)| < \epsilon$. Thus $f$ is continuous.$\square$
+\end{document}

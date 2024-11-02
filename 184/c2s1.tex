@@ -1,0 +1,56 @@
+\documentclass{article}
+\linespread{2}
+
+\usepackage{amsfonts}
+
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+1.
+
+(a) Note that: 
+
+$\hspace{2.5cm} \frac{n}{n+1} < \frac{n+1}{n+1} < 1 , \forall n \in \mathbb{N}$ 
+
+so the sequence is bounded by $1$
+
+Also note that: 
+
+$\hspace{2.5cm} x_{n} = \frac{n}{n+1} < \frac{n+1}{n+2} = x_{n+1}, \forall x \in \mathbb{N}$ 
+
+so the sequence is monotone increasing, then by monotone convergence theorem,  $\{ x_{n} \}$ converges. 
+
+We WTS that $\lim_{n\rightarrow \infty}\{x_{n} \}= 1$. 
+
+Let $\epsilon > 0$ be given. Note that: 
+
+$\hspace{2.5cm} |x_{n} - 1| < \epsilon$
+
+$\hspace{2cm} \Leftrightarrow 1-x_{n} < \epsilon $  since $ 1>x_{n} \text{, } \forall x \in \mathbb{N}$
+
+$\hspace{2cm} \Leftrightarrow 1-\frac{n}{n+1} < \epsilon$
+
+$\hspace{2cm} \Leftrightarrow \frac{1}{n+1} < \epsilon$
+
+$\hspace{2cm} \Leftrightarrow n+1 > \frac{1}{\epsilon}$
+
+$\hspace{2cm} \Leftrightarrow n > \frac{1}{\epsilon} -1$
+
+So let the natural number $N$ be the smallest number that greater than $\frac{1}{\epsilon} -1$, then $\forall n > N$, we will have $|x_{n} - 1| < \epsilon$.
+So $\{ x_{n} \} $ converges to 1.
+
+(b)
+
+Note that $\forall n \geq 2$, 
+
+$\hspace{1cm} x_{n} = \frac{2^n}{n!} = \frac{(n+1)2^n}{(n+1)!} > \frac{2\times2^n}{(n+1)!} = x_{n+1}$
+
+So the sequence is monotone decreasing. 
+
+Also, $\forall n \in \mathbb{N}$, $2^n$ and $n!$ are strictly greater than 0, so $\{ x_{n} \}$ is bounded below by $0$. By monotone convergence theorem, $\{ x_{n} \}$ converges. 
+
+Finally, we WTS that  $\lim_{n \rightarrow \infty} \{x_{n} \}= 0$.
+
+
+\end{document}
