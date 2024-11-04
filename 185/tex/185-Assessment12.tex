@@ -36,15 +36,13 @@ Proof:
 
     Let $P_n$ be a partition that for any $k \in [1,n], x_{k} - x_{k-1} < \delta$. Then 
 
-    $U(f, P_n) - L(f, P_n) = \sum\limits^n_{k=1} M_k (x_k - x_{k-1})- \sum\limits^n_{k=1} m_k (x_k - x_{k-1}) $
-
-    $\hspace{3.1cm} = \sum\limits^n_{k=1} (M_k - m_k) (x_k - x_{k-1})$
-
-    $\hspace{3.1cm}< \frac{\epsilon}{b-a} \sum\limits^n_{k=1} (x_k - x_{k-1}) $
-    
-    $\hspace{3.1cm}< \frac{\epsilon}{b-a} (b-a) $
-
-    $\hspace{3.1cm}< \epsilon$
+    \begin{align*}
+    U(f, P_n) - L(f, P_n) & = \sum\limits^n_{k=1} M_k (x_k - x_{k-1})- \sum\limits^n_{k=1} m_k (x_k - x_{k-1})\\
+    & = \sum\limits^n_{k=1} (M_k - m_k) (x_k - x_{k-1})\\
+    & < \frac{\epsilon}{b-a} \sum\limits^n_{k=1} (x_k - x_{k-1})\\
+    & < \frac{\epsilon}{b-a} (b-a)\\
+    & < \epsilon 
+    \end{align*}
 
     So from Part $1$, $f$ is Riemann Integrable. $\square$
 \end{enumerate}
