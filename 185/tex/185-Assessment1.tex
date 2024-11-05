@@ -26,12 +26,10 @@ So, $2T_{2^k} -a_1 \geq S_k$, and since $T_{2^k}$ is bounded, $S_k$ and $\Sigma^
 
 $\newline$
 Suppose $\Sigma ~2^k a_{2^k}$ is bounded, so $S_m$ is also bounded. Note that, for any $k \in \mathbb{N}$,
-
-$S_k = a_1 + 2a_2 + 4a_4 + \dots + 2^ka_{2^k}$
-
-$\hspace{.6cm}\geq a_1 + (a_2 +a_3) + (a_4 + a_5 +a_6 + a_7) + \dots + (a_{2^k} + \dots + a_{2^{k+1}-1})$
-
-$\hspace{.6cm}= T_{2^{k+1}-1}$
-
+\begin{align*}
+S_k &= a_1 + 2a_2 + 4a_4 + \dots + 2^ka_{2^k}\\
+&\geq a_1 + (a_2 +a_3) + (a_4 + a_5 +a_6 + a_7) + \dots + (a_{2^k} + \dots + a_{2^{k+1}-1})\\
+&= T_{2^{k+1}-1}
+\end{align*}
 So, for any $m \in \mathbb{N}$ such that $m \le 2^{k+1}-1$, we have that $S_k \geq T_{2^{k+1}-1} \geq T_m$, and since $S_k$ is bounded, $T_m$ and $\Sigma^{\infty}_{k=1} a_k$ is bounded and converges by Monotone Convergence Theorem. $\square$
 \end{document}
