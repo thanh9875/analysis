@@ -19,21 +19,15 @@ Proof:
     \item Let $P$ be a partition. 
 
     For each $k$, let $m_k = \inf\{f(x) | x \in [x_{k-1}, x_k]\}$ and $n_k= \inf\{g(x) | x \in [x_{k-1}, x_k]\}$. Then, for all $x \in [x_{k-1}, x_k]$, 
-    
-    $\hspace{1.5cm}m_k \le f(x)$
-
-    $\hspace{1.1cm} \Leftrightarrow m_k + g(x) \le f(x) + g(x)$
-
-    $\hspace{1.1cm} \Leftrightarrow m_k + g(x) \le \inf\{f(x) +g(x)\}$
-
-    $\hspace{1.1cm} \Leftrightarrow \inf\{m_k + g(x)\} \le m_k + g(x) \le \inf\{f(x) +g(x)\}$
-
-    $\hspace{1.1cm} \Leftrightarrow m_k + n_k \le \inf\{f(x) +g(x)\}$
-
-    $\hspace{1.1cm} \Leftrightarrow \sum (m_k + n_k)(x_{k}-x_{k-1}) \le \sum\inf\{f(x) +g(x)\}(x_k - x_{k-1})$
-
-    $\hspace{1.1cm} \Leftrightarrow L(f, P) + L(g, P) \le L(f+g, P)$
-
+\begin{align*}    
+		 &m_k \le f(x)\\
+		 \Leftrightarrow &m_k + g(x) \le f(x) + g(x)\\
+		 \Leftrightarrow & m_k + g(x) \le \inf\{f(x) +g(x)\}\\
+		 \Leftrightarrow &\inf\{m_k + g(x)\} \le m_k + g(x) \le \inf\{f(x) +g(x)\}\\
+		 \Leftrightarrow &m_k + n_k \le \inf\{f(x) +g(x)\}\\
+		 \Leftrightarrow &\sum (m_k + n_k)(x_{k}-x_{k-1}) \le \sum\inf\{f(x) +g(x)\}(x_k - x_{k-1})\\
+		 \Leftrightarrow &L(f, P) + L(g, P) \le L(f+g, P)
+\end{align*}
     Similarly, we have $U(f+g, P) \le U(f,P) + U(g,P)$, so the inequality becomes $L(f, P) + L(g, P) \le L(f+g, P) \le U(f+g, P) \le U(f,P) + U(g,P)$. 
     
     Since $P$ is arbitrary and $f, g$ are Riemann Integrable, we have \\$L(f) + L(g) = L(f+g) = U(f+g) = U(f) + U(g)$, so $f+g$ is Riemann Integrable. And, $\int_a^bfdx+\int_a^bgdx = U(f) + U(g) = U(f+g) = \int_a^b(f+g)dx$. 
