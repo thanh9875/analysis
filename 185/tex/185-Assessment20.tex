@@ -30,21 +30,17 @@ Proof:
 
       Let $E_{1,0} = [0, \frac{1}{2})$ and $E_{1,1} = [\frac{1}{2}, 1]$, and let the function $S_1 = 0 \times \chi_{E_{1,0}} + \frac{1}{2^2} \times \chi_{E_{1,1}}$, and $\int S_1 dm = \frac{1}{8}$.
 
-      Let $E_{n,i} = [\frac{i}{2^n}, \frac{i+1}{2^n})$, and let the function $S_n = \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} \chi_{E_{n,i}}$.
+      Let $E_{n,i} = [\frac{i}{2^n}, \frac{i+1}{2^n})$, and let the function $S_n = \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} \chi_{E_{n,i}}$. Then, 
 
-      Then $\int S_n~dm = \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} ~ \mu(E_{n,i})$
-
-      $\hspace{2.75cm}= \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} \frac{1}{2^n}$
-
-      $\hspace{2.75cm}= \frac{1}{8^n} \sum\limits^{2^n-1}_{i=0} i^2$
-
-      $\hspace{2.75cm}= \frac{2^n(2^n-1)(2^{n+1}-1)}{6\times8^n}$
-
-      $\hspace{2.75cm}= \frac{2^{2n+1} -2^{n+1} - 2^n +1}{6\times4^n} $
-
-      $\hspace{2.75cm}= \frac{2\times4^n}{6\times4^n} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n} $
-
-      $\hspace{2.75cm}= \frac{1}{3} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}$
+      \begin{align*}
+      \int S_n~dm &= \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} ~ \mu(E_{n,i})\\
+      &= \sum\limits^{2^n-1}_{i=0} \frac{i^2}{4^n} \frac{1}{2^n}\\
+      &= \frac{1}{8^n} \sum\limits^{2^n-1}_{i=0} i^2\\
+      &= \frac{2^n(2^n-1)(2^{n+1}-1)}{6\times8^n}\\
+      &= \frac{2^{2n+1} -2^{n+1} - 2^n +1}{6\times4^n}\\
+      &= \frac{2\times4^n}{6\times4^n} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}\\
+      &= \frac{1}{3} - \frac{2}{6\times2^n} - \frac{1}{6\times2^n} + \frac{1}{6\times 4^n}
+      \end{align*}
 
       Since, for all $n$, $S_n \le x^2$, so $\int x^2dm = \lim\limits_{n \to \infty} \int S_n~dm = \frac{1}{3}$.
 
