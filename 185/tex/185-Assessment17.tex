@@ -16,7 +16,7 @@
 
 \begin{document}
 
-Let $\mathbb{X}\subseteq\mathbb{R}$, $\mathscr{M}$ a $\sigma$-algebra, and $\mu$ is a measure on $(\mathbb{X},\mathscr{M})$.  Prove the following:
+Let $\mathbb{X}\subseteq\mathbb{R}$, $\mathscr{M}$ is a $\sigma$-algebra, and $\mu$ is a measure on $(\mathbb{X},\mathscr{M})$.  Prove the following:
 \begin{enumerate}
 \item If $E,F\in\mathscr{M}$, and $E\subseteq F$, then $\mu(E)\leq\mu(F)$.
 \item If $\{E_j\}_{j=1}^\infty\subseteq\mathscr{M}$, then $\mu\left(\bigcup_{j=1}^\infty E_j\right)\leq\sum_{j=1}^\infty\mu(E_j)$
@@ -30,15 +30,9 @@ Proof:
     \item Note that $\mu(F) = \mu(E \cup E^c) = \mu(E) + \mu(E^c) \geq \mu(E)$.
 
     \item It suffices to show the property holds with $E_1$ and $E_2$.
-        Note that, $E_1 \cap E_2 \subseteq E_1 \cup E_2$, so $\mu(E_1 \cap E_2) \le \mu(E_1 \cup E_2)$
+        Note that, $E_2 \setminus \{E_1\} \subseteq E_2$, \\so $\mu(E_2 \setminus \{E_1\}) \le \mu(E_2)$. Then, 
 
-        Note that, $\mu(E_1 \cup E_2)$
-
-        $\hspace{1.6cm}= \mu(E_1 \setminus \{E_1 \cap E_2\}) + \mu(E_2 \setminus \{E_1 \cap E_2\}) + \mu(E_1 \cap E_2)$
-
-        $\hspace{1.6cm}\le \mu(E_1 \setminus \{E_1 \cap E_2\}) + \mu(E_2 \setminus \{E_1 \cap E_2\}) + \mu(\{E_1 \cup E_2\})$
-
-        $\hspace{1.6cm}\le \mu(E_1) + \mu(E_2)$.
+        $$\mu(E_1 \cup E_2) = \mu(E_1) + \mu(E_2 \setminus \{E_1\}) \le \mu(E_1) + \mu(E_2)$$.
 
     \item Let $A = \lim\limits_{j\rightarrow\infty}\mu(E_j)$. Then $\forall \epsilon > 0$, there exists $N \in\mathbb{N}$ such that for all $n \geq N$, $A - \mu(E_n) < \epsilon$.
 
@@ -46,7 +40,7 @@ Proof:
 
     Also, by similar reason, $\mu(\bigcup\limits^{\infty} E_i) \geq \mu(\bigcup\limits_{i=1}^{n}E_i)$.
 
-    Finally, $\epsilon > A - \mu(E_n) = A - \mu(\bigcup\limits^{n}E_i) \geq \mu(\bigcup\limits^{\infty} E_i)$, so $A = \mu(\bigcup\limits^{\infty} E_i)$.
+    Finally, $\epsilon > A - \mu(E_n) = A - \mu(\bigcup\limits^{n}E_i) \geq A - \mu(\bigcup\limits^{\infty} E_i)$, so $A = \mu(\bigcup\limits^{\infty} E_i)$.
 
     \item From part 3, for each $i$, let $F_i$ such that $E_i^c = F_i$.
 
