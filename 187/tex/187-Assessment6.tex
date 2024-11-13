@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\linespread{1.4142}
+
+\begin{document}
+
+\begin{enumerate}
+    \item Let $w(t)$ be a piecewise continuous complex-valued function defined over an interval $a\leq t\leq b$.  Prove that $\left|\int_a^b w(t)dt\right|\leq\int_a^b|w(t)|dt$.
+    
+    Note that,
+    \begin{align*}
+    \int^b_a |w(t)| dt &\geq \max{(\int^b_a w(t)dt, ~\int^b_a -w(t) dt)}\\ 
+    &=  \max{(\int^b_a w(t)dt, ~-\int^b_a w(t) dt)} = \left|\int^b_a w(t)dt\right|
+    \end{align*}
+
+    \item Let $\mathcal{C}$ be a contour with length $L$ and $f(z)$ continuous on $\mathcal{C}$.  Let $M$ be a real number such that $|f(z)|\leq M$ on all point on $\mathcal{C}$.  Prove that $\left|\int_\mathcal{C}f(z)dz\right|\leq ML$.
+    
+    For $a\le x \le b$, let $w(t)$ be a parameterization of $\mathcal{C}$.
+
+    Rewrite $L = \int^b_a |w'(t)| dt$, then,
+    \begin{align*}
+    \left|\int_\mathcal{C}f(z)dz\right| &= \left|\int_a^b f(w(t)) w'(t) dt\right| \\
+    &\le \int^b_a |f(w(t))w'(t)|dt \\
+    &= \int^b_a |f(w(t))| |w'(t)| dt \\
+    &\le \int^b_a M |w'(t)|dt = M\int^b_a |w'(t)|dt = ML
+    \end{align*}
+
+    \item Let $f$ be a function analytic inside and on a positively oriented circle $\mathcal{C}_R$, centered at $z_0$ with radius $R$.  Let $M_R$ denote the maximum value of $|f(z)|$ on $\mathcal{C}_R$.  Prove that $|f^{(n)}(z_0)|\leq \frac{n!M_R}{R^n}$ for $n\in\mathbb{N}$.    
+    
+    For any $z$ inside $\mathcal{C}_R$, $|z-z_0| \le R$.
+    Using the Cauchy integration formula, we have that
+    \begin{align*}
+    |f^{(n)} (z_0)| &= \left| \frac{n!}{2\pi i} \int_{\mathcal{C}_R} \frac{f(z)}{(z-z_0)^{n+1}} dz\right|\\
+        &\le \frac{n!}{2\pi } \int_{\mathcal{C}_R} \frac{\left| f(z)\right|}{\left|(z-z_0)^{n+1}\right|}dz\\
+        &\le \frac{n! M_R}{2\pi } \int_{\mathcal{C}_R}|z-z_0|^{-n-1}dz
+    \end{align*}
+
+    The integral $\int_{\mathcal{C}_R}|z-z_0|^{-n-1}dz$ is of the function $g(z) = |z-z_0|^{-n-1}$ over $\mathcal{C}_R$, which has the length $L =2\pi R$, so from part 2, $\int_{\mathcal{C}_R}|z-z_0|^{-n-1}dz \le 2\pi RR^{-n-1} = 2\pi R^{-n}$.
+   
+    Put this back in, we have $|f^{(n)} (z_0)| \le \frac{n! M_R}{R^n}$. $\square$
+\end{enumerate}
+\end{document}
