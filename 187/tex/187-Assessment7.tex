@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\linespread{1.4142}
+
+
+
+\begin{document}
+\begin{enumerate}
+    \item Loiuville's Theorem: If a function $f$ is entire and bounded in the complex plane, then $f(z)$ is constant throughout the plane. 
+    
+    Let $M$ be an upper bound of $f$. Since $f$ is entire, for any $r \in \mathbb{R}$, by Cauchy's Inequality, for any $z_0 \in \mathbb{C}$, $0 \le \left|f'(z_0)\right| \le \frac{M}{r}$.
+    
+    Since $\lim\limits_{r \to \infty}\frac{M}{r} = 0$, $f'(z_0) = 0$. So $f'(z) = 0$ for all $z \in \mathbb{C}$, so $f(z)$ is constant.  $\square$
+\end{enumerate}
+\end{document}
