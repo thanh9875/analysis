@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{environ}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\linespread{2.0}
+
+\def\d{{\rm d}}
+\def\e{{\rm e}}
+\def\i{{\rm i}}
+\def\({\left(}
+\def\){\right)}
+\def\s#1{\hspace{#1cm}}
+\def\bb{\rule{24pt}{8.2pt}}
+\def\note#1{\bb~{\sf #1}}
+\def\eq#1{(\ref{#1})}
+\def\Ref#1{ref.~\citenum{#1}}
+\def\F#1#2#3#4#5{\,{}_{#1}F_{#2}\(#3;#4;#5\)}
+\def\Fpq{\F{p}{q}{a_1\dots a_p}{b_1\dots b_q}{z}}
+\def\poch#1#2{\(#1\)_{#2}}
+\def\FW#1#2#3#4#5{\,{}_{#1}\Psi_{#2}\left[\genfrac{}{}{0pt}{}{#3}{#4};#5\right]}
+\def\FWpq{\FW{p}{q}{\(a_1,A_1\)\dots\(a_p,A_p\)}{\(b_1,B_1\)\dots\(b_q,B_q\)}z}
+\def\FWA{\FW{1}{1}{\(a_1,A_1\)}{\(b_1,B_1\)}z} 
+\def\FN{\FW{1}{1}{\(1/2,1/2\)}{\(1+\frac{l}{2}, 1/2\)}{-1}}
+\def\FP{\FW{1}{1}{\(1/2,1/2\)}{\(1+\frac{l}{2}, 1/2\)}{1}}
+\def\FNK{\FW{1}{1}{\(1/2,1/2\)}{\(1+k, 1/2\)}{-1}}
+\def\FPK{\FW{1}{1}{\(1/2,1/2\)}{\(1+k, 1/2\)}{1}}
+\def\FWpqN{\FW{p}{q}{\(a_1,A_1\)\dots\(a_p,A_p\)}{\(b_1,B_1\)\dots\(b_q,B_q\)}{-z}}
+\def\Sqr{\FW{p+1}{q+1}{\(1,1\)\(a_1,2A_1\)\dots\(a_p,2A_p\)}{\(1,2\)\(b_1,2B_1\)\dots\(b_q,2B_q\)}{z^2}}
+\def\FNT{\FW{2}{2}{\(1, 1\)\hspace{.177cm}\(1/2, 1\)}{\(1+\frac{l}{2}, 1\)\hspace{.177cm}\(1, 2\)}{1}}
+\def\cat21{}
+
+
+\title{Cat Project}
+
+\date{25 September, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+$\hspace{1.0cm}$This paper will include the following factors when considering the population of a feral cat colony in some of the approaches: normal growth, capture and kill some cats every year, and capture and neuter some cats every year. 
+
+Henceforth, the growth rate in all scenarios will be denoted by $\frac{dP}{dt}$, where $P(t)$ is the population at time $t$(years), and in method $2$ and $3$, $n$ will be the number of traps. 
+
+The notation $c$ and $e$ also appear in this project, and as for the non-mathematicians: $e$ is just some number between $2$ and $3$ which you won't need to know, just use the calculator(if not supplied it is approximately 2.718), and $c$ is just any random real number that is found by boundary conditions. Also, the notation $ln$ represents the exponent of $e$ to something, just in the opposite way, i.e. you don't take $e$ to the power of equations after $ln$, you take $e$ to the power of the opposite side. Besides those, all the steps are just simple algebra covered kappa kappa kitty class, or you can just trust us.
+
+\section{Method 1: Nothing is done}
+
+$\hspace{1.0cm}$In this scenario, the feral cat population will grow according to normal growth model. The growth rate is given as $k =1.08$, and we know that the growth rate is proportional to the size of the population, which is $P(t)$. From that, the equation is as follows (we won't bore you with detail and calculation, you can jump straight to $(2)$): 
+
+$\hspace{4cm}\frac{dP}{dt} = 1.08P \hspace{3.0cm} (1)$
+
+$\hspace{3.5cm}\Leftrightarrow \frac{dP}{P} = 1.08 dt$
+
+$\hspace{3.5cm}\Leftrightarrow ln|P| = 1.08t + c$ 
+
+$\hspace{3.5cm}\Leftrightarrow P(t) = ce^{1.08t}$
+
+We also know that the initial population is $100$, which means $P(0)=100$. Substitute $t=0$ and $P = 100$ into equation above, we get the following: 
+
+$\hspace{3.5cm} 100 = ce^0$
+
+$\hspace{3.5cm}\Leftrightarrow 100 = c$
+
+$\hspace{3.5cm} \text{then the equation is}$
+
+$\hspace{3.5cm}  P(t) = 100e^{1.08t} \hspace{3cm} (2)$
+
+$\hspace{1.0cm}$In short, we can obtain the size of population at time $t$ by just input it into $(2)$. For example, in 12 years, the population would be $P(12) = 100e^{1.08*12}  \approx 425066611 $, or over $42$ millions cats.  
+
+\section{Method 2: The killing of innocent cats.}
+
+$\hspace{1.0cm}$In this scenario, the population will grow according to normal growth model, but by catching and killing $12$ cats every year per trap(for a total of n traps), we will take that into account by subtracting $12$ from $\frac{dP}{dt}$, which is set up similar in method 1. We will have the following (again, the following calculation are boring, you can just jump to $(4)$): 
+
+$\hspace{4cm} \frac{dP}{dt} = 1.08P -12n$
+
+$\hspace{3.5cm} \Leftrightarrow\frac{dP}{1.08P-12n} = dt$
+
+$\hspace{3.5cm} \Leftrightarrow \frac{1}{1.08}  ln|1.08P-12n| = t + c$
+
+$\hspace{3.5cm}\Leftrightarrow ln|1.08P-12n| = 1.08t +c$
+
+$\hspace{3.5cm}\Leftrightarrow 1.08P - 12n = ce^{1.08t}$
+
+$\hspace{3.5cm} \Leftrightarrow 1.08P = ce^{1.08t} +12n$
+
+$\hspace{3.5cm} \Leftrightarrow P(t) = ce^{1.08t} + \frac{12n}{1.08} \hspace{3.0cm} (3)$
+
+In this method, since we subtracted $12n$ from the $\frac{dP}{dt}$,  the formula $(3)$ can only applied after 1 year, or $t \geq 1$. If we want to calculate the population at any time before that, we can use $(2)$ similar to the scenario 1. Because of that, instead of using the initial value of $P(0) = 100$, we will use the initial value of $P(1) = 100e^{1.08}$, which is derived from using formula $(2)$, giving us the population after $1$ years. Substitute that into $(3)$, we obtain: 
+
+$\hspace{4cm} 100e^{1.08} = ce^{1.08} + \frac{12n}{1.08}$
+
+$\hspace{3.5cm} \Leftrightarrow 100 = c + \frac{12n}{1.08e^{1.08}}$
+
+$\hspace{3.5cm} \Leftrightarrow 100 - \frac{12n}{1.08e^{1.08}} = A$
+
+$\hspace{3.5cm} \Leftrightarrow A \approx 100-3.77328n$
+
+$\hspace{3.5cm} \text{then the equation is}$
+
+$\hspace{3.5cm} P(t) = (100-3.77328n)e^{1.08t} + \frac{12n}{1.08} \hspace{3cm}(4)$
+
+$\hspace{0.5cm}$Similar to the method 1, we can use $(4)$ to calculate the population after $t$ years with catching and killing $12$ cats per year. 
+
+\section{Method 3: The neutering option}
+
+$\hspace{0.5cm}$Note that, we arrive at $(1)$ by multiply the factor $k = 1.08$ with the population $P$ because we assume the whole population can reproduce. In method 2, we deduct $12$ from $\frac{dP}{dt}$ because we kill $12$ from the population $P$ after they reproduce. However, in this method, in each new cycle, only $P-12$ individuals can reproduce, and that other $12$ still in the population. So, we will set $\frac{dP}{dt}$ to $1.08(P-12)$ instead of $P$ as in method 1, and we will also not subtract 12 directly from $\frac{dP}{dt}$. We have the following (the final formula is at $(6)$):
+
+$\hspace{4cm} \frac{dp}{dt} = 1.08(P-12n)$
+
+$\hspace{3.5cm} \Leftrightarrow \frac{dP}{P-12n} = 1.08dt $
+
+$\hspace{3.5cm} \Leftrightarrow ln|P-12n| = 1.08t + c$
+
+$\hspace{3.5cm} \Leftrightarrow P-12 = Ae^{1.08t}$
+
+$\hspace{3.5cm} \Leftrightarrow P(t) = ce^{1.08t} +12n \hspace{3cm}(5)$
+
+Similar to method 2, we only subtract 12 from the population after 1 year, or $t \geq 1$. So, we will use the initial value of $P(1) = 100e^{1.08}$, which is also similar to method 2. Substitute that into $(5)$, we obtain:
+
+$\hspace{4.0cm} 100e^{1.08} = ce^{1.08} + 12n$
+
+$\hspace{3.5cm} \Leftrightarrow 100 = c + \frac{12n}{e^{1.08}}$
+
+$\hspace{3.5cm} \Leftrightarrow c = 100 - \frac{12n}{e^{1.08}}$
+
+$\hspace{3.5cm} \text{then the equation is} $
+
+$\hspace{3.5cm}P(t) = (100 - \frac{12n}{e^{1.08}})e^{1.08t} +12n \hspace{2.5cm}(6)$
+
+
+\section{Conclusion and Ending Remarks}
+
+We will rewrite the results from $(2)$, $(4)$, and $(6)$, representing each scenarios: 
+
+$1.$ Natural growth case
+
+$\hspace{4cm}  P(t) = 100e^{1.08t}$
+
+$2.$ Capture-and-kill case
+
+$\hspace{4cm}  P(t) = (100-3.77328n)e^{1.08t} + \frac{12n}{1.08}$
+
+$3.$ Capture-and-neuter case
+
+$\hspace{4cm}  P(t) = (100 - 4.0751n)e^{1.08t} +12n $
+
+$\hspace{1cm}$where $P(t)$ is the population at time $t$ (years).
+
+In the long term, we can see the difference between 3 methods: not much. Specifically, between method 2 and 3, we expect to see the same results since as $t$ get bigger, the difference between $12$ and $\frac{12}{1.08}$ becomes trivial, and the coefficient of $3.77328$ and $4.0751$ is also insignificant, only about $0.3\%$ difference. So, the fate of the population does depend on setting traps. Also, we don't have neither the nature mortality rate in population nor the amount of traps set, so our conclusion is limited in that capacity.
+
+
+\section{Addendum; natural growth with all the factors we can consider}
+
+In this section, we will consider the following factors; average mortality rate, average cats captured per year, and food supply that is suitable for the cats at a time $t$ (calories).
+
+The factors are labeled as
+
+$\alpha$ = average mortality rate,
+
+$\gamma$ = average cats captured per year
+
+$g(t)$ = food supply at a time $t$
+
+Given that a feral cat takes in $170-230$ calorie$s^{[1]}$, the simplest model for $g(t)$ is $g_{0} + \rho t$, and if the population exceeds the food supply, the population is sure to decrease. Consider
+
+\begin{math}
+\hspace{4cm}
+    \frac{dP}{dt} = 1.08P(\rho t - 230P + g_{0}) - \alpha
+\end{math}
+
+The solution of which can be found when restricting to a Riccati differential form. Resulting in,
+
+    $\hspace{4cm} P(t) = 0.00217391(\rho t + g_{0}) - \alpha t - \frac{0.00402576}{c_0 - t}$
+
+$\hspace{3cm} \text{where }c_{0} = \frac{0.00402576}{0.00217391g_{0} - 100}$
+
+
+\section{References}
+
+[1] - https://www.bideawee.org/programs/feral-cat-initiative/colony-care/food-and-shelter/feeding-stations/feeding-tips
+
+
+
+\end{document}
