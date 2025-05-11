@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{systeme}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\linespread{1.4142}
+\graphicspath{ {./images/} }
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\curve}{\mathcal{C}}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} %for ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} %for flooring function
+%proofs envinronment
+\newenvironment{proofs}{%
+    \par\noindent\textit{Proof:} % Bold "Proof:" at the beginning
+    \par\noindent
+}{%
+    \hfill$\qed$ % qed symbol at the end
+    \par\noindent
+}
+
+%multiset notation
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+
+\begin{document}
+Hello world
+
+\end{document}
+
+\begin{comment}
+
+to delete files: latexmk -c
+
+to compile: pdflatex (filename).tex
+
+to add a pdf
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1 \linewidth]{{filename}.pdf}
+    \caption{Data sheet}
+\end{figure}
+
+\end{comment}
