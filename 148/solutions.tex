@@ -1,0 +1,451 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{systeme}
+\usepackage{multicol}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\linespread{1.4142}
+\graphicspath{ {./images/} }
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\curve}{\mathcal{C}}
+
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{answer}{\textbf{Answer.}}
+
+\newcommand{\prob}[1]{\textbf{Problem #1:}}
+
+
+\title{Problem Journal Math 148 (J-term 2025)} %replace with your class
+\date{Januray 24, 2025}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Problem 1:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item There are $16$ options for each of the $6$ choices, so there are $16^6 \approx 1.6\times 10^7$ total possible numbers.
+    \item There are $\binom{25}{5} \approx 5.3 \times 10^4$ $5-$subset of $[25]$.
+    \item $(18)_6 \approx 7.3 \times 10^4$
+\end{enumerate}
+
+So the best change of winning is to purchasing option $(c)$.
+$\square$
+
+\textbf{Problem 2:}
+
+Given an empty words of length $n$, we choose an $k$ number of positions for number $1$. Fill the rest with zeros. The resulting words will have exactly $k$ ones.
+Thus, there are exactly $\binom{n}{k}$ such words.
+
+Analogously, there are exactly $\binom{n}{k}$ words with $k$ zeros. $\square$
+
+\textbf{Problem 3:}
+
+In any palindrome, we only need to choose only half of words. If $n$ is even, we have to choose exactly $\frac{n}{2}$ numbers. If $n$ is odd, we will have to choose $\frac{n-1}{2}$ numbers and $1$ number for the middle number.
+
+In both cases, the total number of such options is $9^{\ceil{\frac{n}{2}}}$. $\square$
+
+\textbf{Problem 4:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Any union of the set $\{4,15\}$ and any subset of $\{5, 6, 7, \dots,  14\}$ will have the smallest and largest elements be $4$ and $15$. Such total number of subset, thus the union, is $2^{10}$.
+    \item Any subset of odd number in $[20]$ will not have any even numbers. The total numbers of subset is $2^{10}$.
+    \item The number of subset of $[17]$ that have the size $10$ is $\binom{17}{10}$.
+\end{enumerate} $\square$
+
+\textbf{Problem 5:}
+
+Any $4-$subset of $[6]$ corresponds for exactly one satisfied $4-$tuple $\{\ell_1, \ell_2, \ell_3, \ell_4\}$. The number of such subset is $\binom{6}{4} = 15$.
+
+\begin{multicols}{3}
+\noindent 1, 2, 3, 4\\
+1, 2, 3, 5\\
+1, 2, 3, 6\\
+1, 2, 4, 5\\
+\columnbreak
+1, 2, 4, 6\\
+1, 2, 5, 6\\
+1, 3, 4, 5\\
+1, 3, 4, 6\\
+1, 3, 5, 6\\
+\columnbreak
+1, 4, 5, 6\\
+2, 3, 4, 5\\
+2, 3, 4, 6\\
+2, 3, 5, 6\\
+2, 4, 5, 6\\
+3, 4, 5, 6
+\end{multicols}
+$\square$
+
+\textbf{Problem 6:}
+
+The number of $6-$letter words that do not simultaneously begin and end with a vowel is the complement of all $6-$letter words that begin and end with vowels. There are $5$ options for the first and ending letter, and there are $26$ for all middle characters. In total, there are $26^4 \cdot 5^2$ words. By the difference principle, there are $26^6 - 26^4 \cdot 5^2$ $6-$letter words that do not simultaneously begin and end with a vowel. $\square$
+
+\textbf{Problem 7:}
+
+First we choose the element $6$, then the number of satisfied $4-$permuatations of $[10]$ is the number of $3-$permutaion of $[5]$, which is $(5)_3$
+
+The number of $4-$permutation that have $6$ as the maximum element must only have $7, 8, 9, 10$ as elements. There  are $4!$ permutations, so the number of $4-$permutation that have $6$ as the maximum element is $(10)_4 - 4!$. $\square$
+
+\textbf{Problem 8:}
+
+If $x_4 = 1$, $x_1+x_2+x_3 = 1$, so one of $x_1, x_2, x_3$ must be $1$, and the rest be $0$. There are $3$ such cases.
+
+If $x_4 = 0$, $x_1+x_2+x_3 = 5$. There are $5$ $3-$tuple of natural numbers that their sum is $5$. They are $(0, 1, 4)$, $(0, 2, 3)$, $(1,2,2)$, $(1,1,3)$, and $(0,0,5)$. The first two, each has $3!=6$ permutations. The last three, each has $3$ permutations. In total, there are $21$ cases with $x_4= 0$.
+
+In total, there are $24$ solutions. $\square$
+
+\textbf{Problem 9:}
+
+There are $2^n$ binary strings of length $n$, and there are only $1$ string each of either all $1$s or $0$s. So there are $2^n-2$ that has at least a $1$ and $0$. $\square$
+
+\textbf{Problem 10:}
+
+There are $5$ odd numbers in $[10]$, so there are $2^5-1$ nonempty subsets of $[10]$ that all elements are odd. There are $2^{10}-1$ nonempty subset of $[10]$, so there are\\ $2^{10}-1-(2^5-1) = 2^{10}-2^5$ nomempty subsets that has at least one even numbers, making their products even. $\square$
+
+\textbf{Problem 11:}
+
+For each $i < n$, there are $n-i$ numbers bigger than $i$ in $[n]$. Thus $|\mathcal{L}| = \sum\limits^{n-1}_{i=1} n-i = \frac{n(n-1)}{2}$.
+
+In the less-than-or-equal-to relation, all number is less than and equal to itself, and $n \le n$. So the size of that set is $|\mathcal{L}| + n$. $\square$
+
+\textbf{Problem 12:}
+
+For any subset of $[n]$, for each $i < n$, in a binary string of size $n$, let the character of index $i$ denotes whether the number $i$ is in that subset: $1$ is yes, and $0$ is no.
+
+For example, in $[3]$, the subset $\{ 1,2 \}$ will be represented by the string $110$ since $1$ and $2$ are in the subset, and $3$ is not.
+
+Let $f: B_n  \to 2^{[n]}$ where $B_n$ is the set of all binary string of length $n$. The function $f$ is well defined, and bijective. So the number of subset of $[n]$ is equal to the number of binary strings of length $n$.
+
+Any subset of size $k$ corresponds to a binary string that has $k$ number of ones. So the number of $k-$subset is how many ways to place $k$ ones into the string of size $n$, which is exactly $\binom{n}{k}$. $\square$
+
+\textbf{Problem 13:}
+
+Let $f: \mathcal{E} \to \mathcal{O}; ~S \mapsto \begin{cases}
+    S \cup \{1\}  &\text{ if } 1 \not\in S \\
+    S \setminus \{1\} &\text{ if } 1 \in S \\
+       \end{cases}$,  where $\mathcal{E}$ and $\mathcal{O}$ is the set of even-sized and odd-sized subset.
+
+Clearly, $f$ is well-defined and bijective. Thus, $|\mathcal{E}| = |\mathcal{O}|$. $\square$
+
+\textbf{Problem 14:}
+
+Let $(n)^k$ denotes the number of ordered $k-$list that allows for repitition.
+
+The number $\multiset{n}{k}$ is the number of $k-$subset that allows for repitition.
+In each subset, there are $k!$ number of possible permutation of its elements, so the number of ordered $k-$list that allows for repitition is $(n)^k = \multiset{n}{k} \cdot k!$. $\square$
+(assumes that one element that appears twice in the list, when switch position, constitutes a new list)
+
+\textbf{Problem 16:}
+
+\begin{enumerate}[label=(\alph*)]
+	\item For any $k-$multiset of $A$, it corresponds uniquely with a solution. Thus the number of solution is the number of $k-$multiset of $A$, so it is $\multiset{|A|}{k}$.
+	\item There are $\ceil{\frac{n}{2}}$ odd numbers in $[n]$, so the number of solution is the number of $k-$multiset of those odd numbers, so it is $\multiset{\ceil{\frac{n}{2}}}{k}$.
+\end{enumerate} $\square$
+
+\textbf{Problem 17:}
+
+For any $k$, the number of composition is $\binom{n-1}{k-1}$. Note that $k \in [n]$. So the total number of composition is, using the sum principle, $\sum\limits^{n}_{i=1} \binom{n-1}{i-1} = \sum\limits^{n-1}_{i=0} \binom{n-1}{i}$.
+
+Using the binomial exapansion, we get $2^{n-1} = (1+1)^{n-1} =\sum\limits^{n-1}_{i=0} \binom{n-1}{i}$. $\square$
+
+\textbf{Problem 18:}
+
+Let $x_4 = 1$. Consider $x_1 + x_2 + x_3 = 25$. Let $y_2 = x_2 -1$ and $y_3 = x_3 - 2$. Then $x_1 + y_2 + y_3 = 22$. Any $3-$composition corresponds uniquely to a satisfied solution $(x_1, x_2, x_3)$, so the number of solution is $\binom{21}{2}$.
+
+Similarly, with $x_4 = 2$ and $x_4 = 3$, we have $\binom{20}{2}$ and $\binom{19}{2}$. So the total number of solutions is $\binom{21}{2} + \binom{20}{2} + \binom{19}{2}$. $\square$
+
+\textbf{Problem 19:}
+
+First we color $k$ nodes with red. There are $\binom{n-k+1}{k}$ ways to do so.
+
+Second we color $i$ nodes with green. Note that $i \in [0,m]$. So, for each $\binom{n-k+1}{k}$ ways of coloring red, there are $\binom{n-k}{i}$ ways of coloring the remaining $n-k$ nodes green.
+
+So the total number of ways to color is $\binom{n-k+1}{k} \sum\limits^{m}_{i=0}\binom{n-k}{i}$. $\square$
+
+\prob{20} Any relations need two component, then the maximum size of equivalence relations on $[n]$ is how many ways to choose $2$ elements in $[n]$, so it is $n^2$. One such relation is $\{(a,b) ~|~ a,b \in [n]\}$. 
+
+        Any relation have at least one relatoin, namely itself, so the minium size of equivalence relations on $[n]$ is $n$. One such relation is $\{(a, b) ~|~ a = b\}$. $\qed$
+
+\textbf{Problem 21:}
+
+There are $n!$ ways of sitting $n$ people into any position.
+
+For any ways of sitting $n$ people, its equivalence class is the dihedral group of the $n-gon$.
+
+So, in total, there are $\frac{n!}{2n}$ ways of sitting $n$ people. $\qed$
+
+\textbf{Problem 22:}
+
+Given $5$ students, there are $\frac{5!}{5} = 4!$ ways to position them into an empty table such that they are not adjacent to each other.
+
+Similarly, there are $4!$ ways to position the professors.
+
+Given a students' sitting, there are $5$ ways to "rotate" any professors' sitting into the table.
+
+Thus, in total, there are $4! \cdot 4! \cdot 5$ ways of sitting them. $\qed$
+
+\textbf{Problem 23:}
+
+Let any $2$ $n-$permuatations are related if and only if their first $k$ elements are identical.
+
+There are $n!$ $n-$permuatations.
+
+For any $n-$permuatation, to find the size of its equivalence class: keeping the first $k$ elements, and to permute the remaining $n-k$ elements. There are $(n-k)!$ ways of doing so.
+
+So the number of $k-$permuatations is the number of $n-$permuatations that have distinct first $k$ elements, so there are $\frac{n!}{(n-k)!}$ such permuatations. $\qed$
+
+\textbf{Problem 24:}
+
+There are $10!$ ways of putting $10$ people arbitrarily.
+
+For any arrangement of $2$ groups of $3$ and $1$ group of $4$, there are $3! \cdot 3! \cdot 4!$ ways of mixing member within the groups.
+
+Additionally, there are $2$ ways to permute the $2$ groups of $3$ with each other.
+
+So, there are $\frac{10!}{2 \cdot 3! \cdot 3! \cdot 4!}$ ways to split. $\qed$
+
+\textbf{Problem 25:}
+
+Let $D = \{2n+1 - i ~|~ i \in S\}$. Note that $D, S \subset [2n+1]$. For each element in $S$, it corresponds uniquely to an element in $D$, thus $|D| = |S| = n+1$. Thus,  $|D| + |S| = 2n+2 > 2n+1 = |[2n+1]|$, so $D$ and $S$ must have at least one common element. Take that common element in $D$ and $S$ and its correpondence in $S$, then those two elements in $S$ will have the sum of $2n_1$. $\qed$
+
+\textbf{Problem 26:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item For any point, there are only four options for the parity of its coordinates. Then there exists two points with the same parity. Then the midpoint of the line connecting those two points will have integer coordinates.
+    \item Consider the points: $(0,0), (0,1), (1,0), (1,1)$. All midpoints have noninteger coordinates. 
+\end{enumerate} $\qed$
+
+\textbf{Problem 27:}
+
+Let $n \in \Z$. Consider the sequence  $a_{i,j}$ where $i \in [n-1, 0]$ and $j \in [n]$ where $a_{i,j} = n \cdot i + j$. For any fixed $i$, $a_{i,j}$ is an increasing subsequence of length $n$.
+
+Forming the sequence $a_{i,j}$ as follows: $n  (n-1) + 1, n (n-1) + 2, \dots, n(n-1) + n, n(n-2) +1, \dots, n(n-2) + n, \dots, n \cdot 0 + 1, 2, \dots, n$.
+
+Thus, in the whole sequence $a_{i,j}$, the longest increasing subsequence is $n$, and the longest decreasing subsequence, forming by choosing at most $1$ element of a fixed, incrementally decreasing $i$, is also $n$. $\qed$
+
+\textbf{Problem 28:}
+
+After panting $k$ nodes with blue, there are $k+1$ spaces between those blue nodes. There are $n-k$ non-blue nodes, then there exists a space with at least $\ceil{\frac{n-k}{k+1}}$ non-blue nodes. Then that space will have the distance of at least $\ceil{\frac{n-k}{k+1}}$, so the distance between an endpoint blue node and the furthest away non-blue node from that node is $\ceil{\frac{n-k}{k+1}}$.
+$\qed$
+
+\textbf{Problem 29:}
+
+\begin{enumerate}[label=(\alph*)]
+	\item There are $9$ options for $1$ and from $4$ to $9$, and there are 1 option for $2$, and there are $8$ options for $3$. Thus, the total number of possible functions is $9^5 \cdot 1 \cdot 8$.
+    \item For element $3$, there are $8$ options. For any element in $[9] \setminus \{3\}$, the number of injective function from that set to $[8]$ (since there are only $8$ options left after choosing for $3$) is $(8)_6$. Thus the total number of injective function is $8 \cdot (8)_6$.
+    \item There are $4$ even numbers in $[9]$, and there are $7$ numbers in $[7]$, so there is no injective functions from $[7]$ to the set of even numbers.
+    \item There are $4$ even numbers, and there are $7$ numbers in $[7]$, so the total number of function is $4^7$.
+\end{enumerate} $\qed$
+
+\textbf{Problem 30:}
+
+The number of surjective functions from $[n]$ to $[3]$: $A = 3^n - (\underbrace{\binom{3}{1} (2^n-2)}_\text{$1$ umapped element} + \underbrace{\binom{3}{2} \cdot 1}_\text{$2$ umapped elements})$.
+
+The number of surjective function: $$4^n - (\underbrace{\binom{4}{1} \cdot 1}_\text{$3$ umapped elements} + \underbrace{\binom{4}{2} (2^n-2)}_\text{$2$ unmapped elements} + \underbrace{\binom{4}{3} (3^n - A)}_\text{$1$ umapped elements})$$ $\qed$
+
+\textbf{Problem 31:}
+
+$(n)_k$ is the number of way to choose ordered $k$ numbers in $[n]$ without replacement.
+
+$(n)_j \cdot (n-j)_{k-j}$ is the number of way to choose the first ordered $j$ numbers from $[n]$, without replacement, then choose the remaining $k-j$ from the remaining $n-j$ numbers, without replacement.
+
+Both numbers count the same thing. $\qed$
+
+\textbf{Problem 32:}
+
+For any $k \le j \le n$, choosing the first $k-1$ numbers from $[j-1]$. In this ordered list of numbers, the largest possible number is $j-1$. In addition, when writing from left to right, there are $k-2$ space among them, and there are one space each to the left and right of the list. If we choose to include the number $j$, there are $k$ possible of space to put them into the sequence and into the list. Essentially, the number $(j-1)_{k-1} \cdot k$ counts how many $k-$list that have $j$ as the largest number.
+
+Thus, $\sum\limits^{n}_{j=k} k(j-1)_{k-1}$ counts the numbers of $k-$list that have the largest number ranging from $k$ to $n$, so it is exactly $(n)_k$. $\qed$
+
+\prob{33} $\multiset{n}{k}$ counts the number of ways to choose $k$ elements from the set of size $n$ with replacement and order does not matter.
+
+First element of the RHS counts the number of ways to choose $k$ elements without choosing the element $n$. The second element counts the way to when choosing the element $n$, but because it does so with replacement, it also choose the remaining $k-1$ elements from the whole set $n$.
+
+Both numbers count the same thing. $\qed$
+
+\prob{34} Let $A,B$ be sets such that $|A| = 2$ and $|B| = 1$. Then $3^n$ counts the number of ways to choose $n$ elements from $A \cup B$ with replacement. For any such selection, let $0 \le i \le n$ be the number of elements chosen from $B$. Given an empty string of length $n$, there are $\binom{n}{n-i}$ ways to choose position for elements from $A$, and there are $2$ options each time to choose. Thus, the number of ways to choose from $A\cup B$ is equal to the number of ways to choose $n-i$ elements from $A$ and put them into $i$ out of $n$ positions. 
+
+By adding up all $i$, we have $3^n = \sum\limits^n_{i=0} \binom{n}{n-i} 2^{n-i} =\sum\limits^n_{i=0} \binom{n}{i} 2^{n-i} $. $\qed$
+
+\prob{35}
+
+For any $m-$subset of the set $[j]$ for $j \le n$, adding the element $n+1$ into that subset results into $(m+1)-$subset of set $[n+1]$. We can do this to any $m-$subset of the set $[j]$ where $j$ ranging from $m$ to $n$, so the total number of such $m-$subset is the number of $(m+1)-$subset of $[n+1]$. In notation, $\sum\limits^n_{j=m} \binom{j}{m} = \binom{n+1}{m+1}$. $\qed$
+
+\prob{36} Note that, $0 = (1-1)^n = \sum \binom{n}{\text{Even}} - \sum\binom{n}{\text{Odd}}$, and since there are $\binom{n}{k}$ subset of size $k$, the number of even subsets equals the number of odd subsets. $\qed$
+
+\prob{38}
+\begin{enumerate}[label=(\alph*)]
+    \item There are $6$ I's, $2$ S's, $1$ N, V, B, E, T, and L each. So there are $\binom{14}{6,2,1,1,1,1,1,1,} = \frac{14}{6!2!}$ distinct ways to arrange $14$ letters in the word.
+    \item In an empty string, there are $\binom{14-6+1}{6} = \binom{9}{6}$ ways to place $6$ I's such that no two I's are adjacent. There are $8$ spaces left, so in total, there are $\binom{9}{6} \cdot \binom{8}{2, 1,1,1,1,1,1}$ distinct arrangements.
+    % \item Let count all $4$ I's as one special character. Then we will have $1$ special character, $2$ I's and S's, $1$ of N, V, B, E, T, L each, to be arranged into $11$ spaces. 
+
+    %     First case is when $2$ I's can be adjacent to each other. Let them be another special character. We cannot put these two special characters so that they are adjacent. There are $\binom{10-2+1}{2} = \binom{9}{2}$ ways of doing so. The remaing characters can be arrange $\binom{8}{2,1,1,1,1,1,1} = \frac{8!}{2!}$. In total, there are $\binom{9}{2} \cdot \frac{8!}{2!}$ arrangments.
+
+    %     Second case is when $2$ I's cannot be adjacent to each other. We first put the lump of I's and $2$ I's into the word. There are $11$ spaces available, then there are $\binom{11-3+1}{3} = \binom{9}{3}$ ways to do so. The remaining $8$ letters, there are $\frac{8!}{2!}$ ways to arrange them. In total, there are $\binom{9}{3} \cdot \frac{8!}{2!}$ arrangments. 
+        
+    %     Combining both cases, we have, $\binom{9}{2} \cdot \frac{8!}{2!}+ \binom{9}{3} \cdot \frac{8!}{2!}$ arrangements.
+
+    \item Not sure yet.
+\end{enumerate} \qed
+
+\prob{39} Let $n \in \Z^+$. The number of ways to place $\sum\limits_{i=1}^n i x_i$ distinguisable people into $n$ teams is $A = \frac{n!}{\prod\limits^n_{i=1} x_i!}$. Since for each team with $i$ people, there are $i!$ ways to permute players within that team, and there are $x_i$ of such team. So the number of ways to place indistinguisable players into $n$ teams is $\frac{A}{\prod\limits^n_{i=1} (i!)^{x_i}} = \frac{n!}{\prod\limits^n_{i=1} (i!)^{x_i}x_i!}$. $\qed$
+
+\prob{40}
+\[
+\lim\limits_{k \to \infty} \frac{1}{k} \binom{-1}{k} = \lim\limits_{k \to \infty} \frac{1}{k} \frac{(-1) (-2)\dots (-k)}{k!}
+= \lim\limits_{k \to \infty} \frac{1}{k} \frac{(-1)^k k!}{k!}
+= \lim\limits_{k \to \infty} \frac{(-1)^k}{k!}
+\]
+absolutely coverges to $0$ since $\lim\limits_{k \to \infty} \frac{1}{k} = 0$. $\qed$
+
+\prob{41} Suppose there are $n$ boxes and some number of balls. For any $m \le k \le n$, $\binom{n}{k} \binom{k}{m}$ counts the number of ways to choose a $k$ boxes to put $1$ ball in each, and among those boxes, choose $m$ boxes to put one more ball into those. In total, there are $k-m$ boxes with $1$ ball, $m$ boxes with $2$ balls, and $n-k$ boxes with no balls. Adding up all $k$ yields:
+\begin{align*}
+    \sum\limits^n_{k=m} \binom{n}{k} \binom{k}{m} &= \sum\limits^n_{k=m} \binom{n}{m, k-m, n-k}\\
+     &= \sum\limits^n_{k=m} \frac{n!}{m!(k-m)!(n-k)!} \\
+     &= \frac{n!}{m!(n-m)!}\sum\limits^n_{k=m} \frac{(n-m)!}{(k-m)!(n-k)!} \\
+     &= \binom{n}{m} \sum\limits^n_{k=m} \binom{n-m}{k-m} \\
+     &= \binom{n}{m} \sum\limits^{n-m}_{i=0} \binom{n-m}{i} \\
+     &= \binom{n}{m} 2^{n-m} \qed \\
+\end{align*}
+
+\prob{42} There are $B(10) = 21147$ equivalence relations on $A$. There are ${10 \brace 8} = 750$ equivalence that have exactly $8$ equivalence classes. $\qed$
+
+\prob{43} Leaving out number $7$ in $[7]$ and an element of $[9]$ so that element will be mapped to $7$. There are $9$ ways to choose the first element, and after that, there are ${8 \brace 6}$ onto functions to $[6]$. In total, there are $9 \cdot {8 \brace 6}$. $\qed$
+
+\prob{44} If $n = 0$, there are $1$ ways to put $0$ balls into $5$ boxes so that all of them are empty. 
+
+If $n > 0$, for any $ 1 \le k \le 4$, there are $\binom{5}{k}$ ways to choose $k$ boxes among $5$ boxes such that they will stay empty. For the remaining $5-k$ boxes, there are $n!\cdot {n \brace 5-k}$ ways to place $n$ balls. For $5-k$ boxes, there are $(5-k)!$ ways to permute them. In total, there are $\sum\limits^4_{k=1} \binom{5}{k} {n \brace 5-k} (5-k)!$ ways to do so. $\qed$
+
+\prob{45} In $n$ balls, leaving out one ball and put into $1$ box. For any $0 \le i \le n-1$, there are $\binom{n-1}{i}$ ways to choose $i$ balls and then distribute among $k-1$ boxes, and place the remaining $n-1-i$ balls into the box with $1$ balls from the beginning. In the end, all the box will have at least $1$ ball, and with $i$ ranging from $0$ to $n-1$, this is equivalent to placing $n$ balls into $k$ boxes such that each box have at least $1$ ball. In notation, ${ n \brace k} = \sum\limits^{n-1}_{i=0} \binom{n}{i} {i \brace k-1}$. $\qed$
+
+\prob{46} Note that,
+\begin{align*}
+    P(n,2) &= P(n-1, 1) + P(n-2, 2) \\
+    &= 1 + P(n-2, 2) \\
+    &= 2 + P(n-4, 2) \\ 
+    &= 3 + P(n-6, 2) \\ 
+    &= \dots \\
+    &= \begin{cases}
+            \frac{n}{2} + P(0,2) = \frac{n}{2} & \text{ if $n$ is even} \\
+            \floor{\frac{n}{2}} + P(1,2) = \floor{\frac{n}{2}} & \text { if $n$ is odd}
+        \end{cases}
+\end{align*}
+
+In either cases, $P(n,2) = \floor{\frac{n}{2}}$. $\qed$
+
+\prob{47}
+\begin{enumerate}[label=(\alph*)]
+    \item For any partition $p \in P(n)$, let $k$ be the number of nonempty boxes in $p$. Then $p$ corresponds uniquely to a partition in $P(n, k)$. Adding up all $k$, we have \\$P(n) = \sum\limits^n_{k=1}P(n,k)$. 
+    \item There are $n$ boxes. First distribute $n$ red balls into boxes such that each box have $1$ balls. Next, distribute $n$ blue balls into $k$ boxes where $1 \le k \le n$. Then each partition $p \in P(n, k)$ for some $k$ corresponds uniquely to a partition in $P(2n, n)$. Specifically, $(a_1, \dots, a_k) \in P(n,k)$ corresponds to $\underbrace{(a_1 + 1, \dots, a_k + 1, \dots, 1)}_{\text{length $n$}}$ in $P(2n,n)$.
+    
+    Adding up all $k$, $P(n) = \sum\limits^n_{k=1}P(n,k) = P(2n,n)$
+\end{enumerate} $\qed$
+
+\prob{48} For any sequence of nonincreasing integer, do the following procedures to get the conjugate: 
+    \indent\begin{enumerate}
+        \item At the begining of each turn, take note the number of element that is not zero. 
+        \item Substract all number by $1$. Ignore zeroes.
+        \item Repeat until all number are zeroes.
+        \item The sequence of number obtained from step $1$ is the conjugate sequence.
+    \end{enumerate}
+
+    Example: Consider the sequence $(5,3,2,2,1)$: 
+    $$(5,3,2,2,1) \to (4,2,1,1,0) \to (3,1,0,0,0) \to (2,0,0,0,0) \to (1,0,0,0,0) \to (0,0,0,0,0)$$
+    obtain the sequence
+    $5 \to 4 \rightarrow 2 \to 1 \to 1 \to 0$, so the conjugate is $5,4,2,1,1$. 
+    
+    Alternate: the conjugate of the partition $z_1, z_2, \dots, z_k$ is $$\underbrace{k ,k, \dots}_{z_k \text{ times}}, \underbrace{k-1, k-1, }_{z_{k-1} - z_k \text{ times}} , \dots, \underbrace{n, n, }_{z_n - z_{n-1} \text{ times}}, \dots, \underbrace{1,1,1}_{z_1 - z_2 \text{ times}}$$ $\qed$
+    
+\prob{49} If $n$ is odd, the partition $(\ceil{\frac{n}{2}}, \underbrace{1,1,\dots ,1}_{\floor{\frac{n}{2}}})$ is self-conjugate. 
+
+        $P(2)$ is even. If $n > 2$ is even, the partition $(\frac{n}{2}, 2, \underbrace{1, \dots, 1}_{\frac{n}{2} - 1})$ is self-conjugate.
+
+        Since the claim is true for all $n$, it is true for $n$ with odd $P(n)$. $\qed$
+
+\prob{50} There are $25$ numbers that is divisible by $4$, $16$ numbers divisible by $6$, $14$ numbers divisible by $7$, $8$ nubmers divisible by both $4$ and $6$, $3$ numbers divisible by both $6$ and $7$, $2$ numbers divisible by both $4$ and $7$, and $1$ number divisible by $4$, $6$, and $7$. 
+
+Then there are $100 - 25-16-14+8+3+2-1 = 57$. $\qed$
+
+\prob{51} For any $j$, there are $\binom{n}{j}$ subset $J \subseteq P$ where $|J| = j$. Thus, $$N_{=} (\varnothing) = \sum\limits^{n}_{j=0} (-1)^j \sum\limits_{\substack{J \subseteq P \\ |J| = j}} N_{\geq} (J) = \sum\limits^{n}_{j=0} (-1)^j \binom{n}{j} f(j)$$ $\qed$
+
+\prob{52} Note that the number of partition of $n-$set into $k$ indistinguisable parts equals to the number of surjective function from $[n]$ to $[k]$.
+
+For any $J \subseteq [k]$, with $|J| = j$, there are $(k-j)^n$ functions that missed at least all member of $J$. Furthermore, for each $j$, there are $\binom{k}{j}$ subsets of size $j$. Thus, for each $j$, there are $\binom{k}{j} (k-j)^n$ functions such that at least $j$ element of $[k]$ do not get mapped.
+
+Using the inclusion-exclusion formula, the number of surjective functions is \\$N_{=}(\varnothing) = \sum\limits_{j=0}^k (-1)^j \binom{k}{j} (k-j)^n$.
+
+There are $k!$ ways to permute the member of $[k]$, thus $S(n, k) = \frac{N_{=}(\varnothing)}{k!}$. $\qed$
+
+\prob{53} Let $P = (P_1, P_2, \dots, P_n)$ where $P_i$ is the properties that number $i$ appears more than once. 
+
+For any $Q \subseteq P$ and $|Q| = q$, in forming a $k-$multiset, first choose $q$ elements twice into the multiset, and choose the remaining $k-2q$ from $[n]$ with replacement. There are $\binom{n}{q}$ ways of choosing $q$ elements, so the total number of such multiset is $N_{\geq} (Q) = \binom{n}{q} \multiset{n}{k-2q}$.
+
+Note that $0 \le q \le \floor{\frac{n}{2}}$, so by the inclusion-exclusion principle, the number of $k-$multiset such that all elements appear at most once is $\binom{n}{k} = \sum\limits_{q=0}^{\floor{\frac{n}{2}}} (-1)^q \binom{n}{q} \multiset{n}{k-2q}$. $\qed$
+
+\prob{54} 
+\begin{enumerate}[label=(\alph*)]
+    \item There are $\binom{k}{j}$ ways to choose the position for $j$ number of $n$. For the remaining $k-j$ elements, there are $(n-1)$ choices each time, so the total number of such $k-$list is $\binom{n}{j} (n-1)^{k-j}$.
+    \item Since $0 \le j \le k$, the total number of $k-$list is $\sum\limits_{j=0}^{k} \binom{k}{j} (n-1)^{k-j}$. Moreover, the number of $k-$list is known to be $n^k$. 
+    \item By binomial theorem, $\sum\limits_{j=0}^{k} \binom{k}{j} (n-1)^{k-j} = \sum\limits_{j=0}^{k} \binom{k}{j} (n-1)^{k-j} 1^j = (n-1+1)^k = n^k$. 
+\end{enumerate} $\qed$
+
+\prob{55} For each $1 \le j \le n$, $\multiset{j}{k-1}$ counts the number of ways to place $j$ balls into the first $k-1$ boxes where one boxes can have more than one ball, and the remaing $n-j$ balls into the final box. In total, it counts how to place $n$ balls into $k$ boxes where a box can have more than one ball, which is $\multiset{n}{k}$. $\qed$
+
+\prob{56} Given $k$ rows of $n$ boxes, there are $\binom{kn}{2}$ ways to put $2$ balls into $kn$ boxes. 
+
+        If those two balls are in different row, first choose two rows, which is $\binom{k}{2}$. Among those two rows, there are $n$ choices to place $1$ ball in each row. So there are $\binom{k}{2} n^2$ ways to do so. 
+
+        If those two balls are in the same row, there are $k$ ways to choose the row, and there are $\binom{n}{2}$ ways to place the balls within that row. So there are $k \binom{n}{2}$ ways to do so. 
+
+        Thus, $\binom{kn}{2} = n^2 \binom{k}{2} + k \binom{n}{2}$. $\qed$
+
+\prob{57} 
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\binom{20}{8} \binom{8}{5} \binom{5}{3}$ counts the number of ways to choose $8$ boxes to place $1$ ball into, then from those $8$ boxes, choose $5$ to place one more ball, and from those $5$ boxes, choose $3$ boxes to place one more. In the end, there are $3$ boxes with $3$ balls, $2$ boxes with $2$ balls, and $3$ boxes with $1$ ball.
+        
+    $\binom{20}{3} \binom{17}{2} \binom{15}{3}$ counts the number of ways to choose $3$ boxes to place $3$ balls, then from $17$ empty boxes choose $2$ to place $2$ balls, and from $15$ empty boxes choose $2$ to place $1$ ball.
+    \item $\binom{n}{k} \binom{k}{j}$ counts the number of ways to choose $k$ boxes to place $1$ ball, and among them, choose $j$ boxes to places $1$ more ball. In total, there are $k-j$ boxes with $1$ ball and $j$ boxes with $2$ balls. 
+        
+    $\binom{n}{j} \binom{n-j}{k-j}$ counts the number of ways to choose $j$ boxes to place $2$ balls, and among $n-j$ empty boxes, choose $k-j$ boxes to place $2$ balls. 
+    
+    Both number counts the same thing.
+\end{enumerate} $\qed$
+
+\end{document}
+

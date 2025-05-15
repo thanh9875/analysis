@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\usepackage{algorithmic}
+\usepackage{algorithm2e}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{yhmath}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{systeme}
+\usepackage{mathrsfs}
+\linespread{1.4142}
+\graphicspath{ {./images/} }
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\curve}{\mathcal{C}}
+\newcommand{\prob}[1]{\textbf{Problem #1:}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil} %for ceiling function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor} %for flooring function
+%proofs envinronment
+\newenvironment{proofs}{%
+    \par\noindent\textit{Proof:} % Bold "Proof:" at the beginning
+    \par\noindent
+}{%
+    \hfill$\qed$ % qed symbol at the end
+    \par\noindent
+}
+
+%multiset notation
+\def\multiset#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+
+\begin{document}
+\prob{1} Determine how many different lottery tickets can be made?
+
+\begin{enumerate}[label=(\alph*)]
+    \item A ticket of selecting six numbers in $[16]$ where repitition is allows and order matters.
+    \item A ticket of selecting five numbers in $[25]$ where order does not matter.
+    \item A ticket of selecting four distinct numbers in $[18]$ and order matters.
+\end{enumerate}
+
+\prob{2} Binary strings are words whose characters are either $0$ or $1$. For each $k,n \in \mathbb{N}$, with $k \le n$, how many binary strings of length $n$ have exactly $k$ ones? How many have exactly $k$ zeros?
+
+\prob{3} How many $n-$digit palindromes can be created using $1-9$ and repitition is allowed?
+
+\prob{4} How many subsets of $[20]$ that have:
+
+\begin{enumerate}[label=(\alph*)]
+    \item have the smallest number be $4$ and the largest be $15$?
+    \item contains no even numbers?
+    \item have size $10$ and do not contain any number larger than $17$?
+\end{enumerate}
+
+\prob{5} Enumerate and count all $4-$lists $(\ell_1, \ell_2, \ell_3, \ell_4)$ such that $\ell_1, \ell_2, \ell_3, \ell_4 \in \Z$ and $1 \le \ell_1 < \ell_2 < \ell_3 < \ell_4 \le 6$.
+
+\prob{6} How many $6$-letter words do not simultaneously begin and end with a vowel?
+
+\prob{7} How many $4$-permutations of $[10]$ have maximum element equal to $6$? How many have the maximum element of at most $6$?
+
+\prob{8} Find the number of $4-$list of the form $(x_1, x_2, x_3, x_4)$ such that $x_i \in \mathbb{N}$ for each integer $1 \le x_i \le 4$ such that $x_1 + x_2 + x_3 + 4x_4 = 5$
+
+\prob{9} How many binary strings of length $n$ have at least one $0$ and at least one $1$ simultaneously?
+
+\prob{10} How many nonempty subsets of $[10]$ have the product of their elements even?
+
+\prob{11} In $n \in \mathbb{Z}^+$ how many are in the less-than relation on $[n]$? How many are in the less-than-or-equal-to relation?
+
+\prob{12} Show that the number of subsets of $[n]$ is equal to the number of binary strings of length $n$.
+
+\prob{13} Suppose $n \in \mathbb{N}$. Show that the number of even-size subset equals to the number of odd-size subsets.
+
+\prob{14} Define $(n)^k$ and show that $\multiset{n}{k} = \frac{(n)^k}{k!}$.
+
+\prob{15} Suppose an ice-cream shop makes three different types of ice-cream cones. How many different ways are there to buy $9$ cones and eat one of them?
+
+\prob{16} Suppose $A \subseteq \R$ is a finite set and $n,k \in \mathbb{Z}^+$
+
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that the number of solutions to $a_1 \le a_2 \le \dots \le a_k$ with $a_i \in A$ for each $i \in [k]$ is $\multiset{|A|}{k}$.
+    \item Determine the number of solutions to $1 \le a_1 \le a_2 \le \dots \le a_k \le n$ where $a_i$ is an odd integer in $[n]$ for each $i \in [k]$.
+\end{enumerate}
+
+\prob{17} Suppose that $n \in \mathbb{Z}^+$ Use the sum principle to prove that the total number of compositions of $n$ is $2^{n-1}$.
+
+\prob{18} Determine the number of ordered integer solutions to $x_1 + x_2 + x_3 + x_4 = 26$ such that $1 \le x_4 \le 3$ and $x_i \geq i$ for each $i\in [3]$.
+
+\prob{19} Suppose $k, n \in \mathbb{Z}^+$ with $m \le n$ and $k \le \floor{\frac{m-n}{2}}$. In $P_n$, how many ways can we color $k$ non-adjacent nodes red and at most $m$ nodes green?
+
+\prob{20} Suppose $n$ is a positive integer. Determine the maximum and mimimum possible size of an equivalence relation on $[n]$?
+
+\prob{21} Suppose $n \geq 3$ is an integer. Determine the number of ways to seat $n$ people at a round table where two arrangements are considered equivalent whenever everyone at the table has the asme exact same set of neighbors.
+
+\prob{22} How many ways are there to seat five professors and five students around a round table with $10$ chairs such that the seating alternates student-professors?
+
+\prob{23} Use the equivalence principle to prove the formula $(n)_k = \frac{n!}{(n-k)!}$
+
+\prob{24} How many ways can we split a group of $10$ people into two groups of size $3$ and one group of size $4$?
+
+\textbf{Bonus:} Suppose $j, k \in \mathbb{Z}+$ with $n=j\cdot k$. Use the combinatorial proof to show that $$\frac{1}{j!} \prod\limits^{j-1}_{i=0} \binom{n-ik}{k} = \frac{n!}{(k!)^j j!}$$ Hints: try to justify the left hand side, and then generalize the argument for arbitrary value of $j$ and $k$.
+
+\prob{25} Suppose $n \in \mathbb{Z}^+$ and let $S \in \binom{[2n]}{n+1}$. Prove that there exist two element in $S$ whose sum is $2n+1$.
+
+\prob{26} Consider any five points in the plane that have integer coordinates.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that there are two points such that the midpoint of the line segment joining those two points also has integer coordinates.
+    \item Show the counterexample for $4$ points.
+\end{enumerate}
+
+\prob{27} Show a counterexample of $n^2$ sequence of distinct real numbers can only have at most $n$ increasing or decreasing subsequence.
+
+\prob{28} Let $n \in \mathbb{Z}^+$ and $k \in \mathbb{N}$. Suppose exactly $k$ nodes in $P_n$ are colored blue. Prove that there exists a blue node and a non-blue node that are at least $\ceil{\frac{n-k}{k+1}}$ steps away from each other.
+
+\prob{29} Consider the possible functions $f: [7] \to [9]$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item How many have $f(2) = 4$ and $f(3) \neq  8$?
+    \item How many have $f(3) \neq 8$ and are one-to-one?
+    \item How many have $f(i)$ even for all $i \in [7]$ and are one-to-one?
+    \item How many have $f(i)$ even for all $i \in [7]$?
+\end{enumerate}
+
+\prob{30} Let $n \in \mathbb{Z}^+$. Determine the number of surjective functions $f: [n] \to [4]$
+
+\prob{31} Suppose $n, j, k \in \mathbb{Z}^+$ with $k,j \le n$. Give a combinatorial proof that $$(n)_k = (n-j)_{(k-j)} \cdot (n)_j$$
+
+\prob{32} Suppose $k$ and $n$ are integers with $1 \le k \le n$. Give combinatorial proof that $$ (n)_k = \sum\limits^k_{n=k} k(j-1)_{k-1}$$
+
+\prob{33} Prove that, for $k,n\in \mathbb{Z}^+$, $\multiset{n}{k} = \multiset{n-1}{k} + \multiset{n}{k-1}$
+
+\prob{34} Prove that, for $n \geq 1$, $3^n = \sum\limits^{n}_{k=0} \binom{n}{k} 2^{n-k}$
+
+\prob{35} Prove that, for $m, n \in \mathbb{Z}^+$ and $m \le n$, $\sum\limits_{j=m}^n \binom{j}{m} = \binom{n+1}{m+1}$.
+
+\prob{36} Prove that the number of even-sized subset equals the number of odd-sized subset.
+
+
+\textbf{Bonus:} Prove that, for $n \in \mathbb{Z}^+$ and $x,y \in \R$, $$(x+y)_n = \sum\limits^n_{k=0} \binom{n}{k} (x)_k (y)_{n-k}$$.
+
+\prob{38} Consider the letters in the wod INVISIBILITIES
+
+\begin{enumerate}[label=(\alph*)]
+    \item How many distinct ways are there to arrange $14$ letters in the word?
+    \item How many distinct ways are there if no tow I's are allowed to be adjacent?
+    \item How many distinct arrangements are there if the longest number of consecutive I's in a row is $4$?
+\end{enumerate}
+
+\prob{39} Let $n \in \Z^+$ and consider the sequence of non-negative integers $x_1, x_2, \dots, x_n$. If there are some people are placed into teams so that for each $i \in [n]$, there are exactly $x_i$ teams of size $i$, then the number of ways to create the teams is $$\frac{n!}{\prod\limits^n_{i=1} (i!)^{x_i} x_i!}$$.
+
+\prob{40} Determine $\lim\limits_{k \to \infty} \frac{1}{k} \binom{-1}{k}$.
+
+\prob{41} Prove that $\sum\limits^n_{k=m} \binom{n}{k} \binom{k}{m} = \binom{n}{m} 2^{n-m}$.
+
+\prob{42} Let $A$ be a $10$ element set. How many equivalence relations are there on $A$? How many have exactly $8$ equivalence classes?
+
+\prob{43} How many onto functions form $[9]$ to $[7]$ have only one element mapped to $7$?
+
+\prob{44} Give a formula for the nubmer of ways to place $n$ distinguishable boxes so that at least one box stays empty.
+
+\prob{45} Give a combinatorial proof that for integer $k,n \geq 1$, $S(n,k) = \sum\limits^{n-1}{i=0} \binom{n-1}{i} S(i, k-1)$. 
+
+\prob{46} Use the face that $P(n,k) = P(n-1, k-1) + P(n-k, k)$ for integers $n, k$ to prove that for all integer $n \geq 3$, $P(n,k) = \floor{\frac{n}{2}}$. 
+
+\prob{47} For each $n \in \Z^+$, let $P(n)$ be the nubmer of partitions of $n$. 
+    \begin{enumerate}[label=(\alph*)]
+        \item Give a combinatorial proof that $P(n) = \sum\limits^n_{k=1} P(n,k)$
+        \item Gibve a bijective proof that $P(n) = P(2n, n)$ for each $n \in \mathbb{N}$.
+    \end{enumerate}
+
+\prob{48} Let $z_i$ be a partitions of $n$ into $k$ parts in non-increasing order. Show how to compute the conjugate of the partitions in terms of $z_i$
+
+\prob{49} Suppose $P(n)$ is odd for $n \in \Z^+$. Show that at least one partitions of $n$ is self-conjugate. 
+
+\prob{50} How many integer in $[100]$ are not divisible by $4$, $6$, and $7$?
+
+\prob{51} Suppose that in an inclusion-exclusion problem, there exits a functions $f$ such that for any subset $J \subseteq P$ with $|J| = j$, $N_{\geq} (J) = f(j)$. Prove that $$N_{=} (\varnothing) = \sum\limits^n_{j=0} \binom{n}{j} (-1)^j f(j)$$. 
+
+\prob{52} Use inclusion-exclusion to prove that the number of partitions of an $n-$set into $k$ parts is $$S(n,k) = \frac{1}{k!} \sum\limits^k_{j=0} \binom{k}{j} (-1)^j (k-j)^n$$
+
+\prob{53} Derive an identity for $\binom{n}{k}$ via inclusion-exclusion by counting the $k-$multisets of $[n]$ is which each element of $[n]$ appears at most once. 
+
+\prob{54} Suppose $n,k \in \Z^+$ and suppose $j$ is an integer with $0 \le j \le k$,
+\begin{enumerate}[label=(\alph*)]
+    \item How many $k-$lists taken from $n$ have exactly $j$ entries that are $n$?
+    \item Use part $(a)$ to partition the $k-$lists taken from $[n]$ and get the formula for $n^k$.
+    \item Prove the formula using the binomial theorem
+\end{enumerate}
+
+\prob{55} Prove that, for all $n,k \in \Z^+$, $\sum\limits^n_{j=1} \multiset{j}{k-1} = \multiset{n}{k}$. 
+
+\prob{56} Prove that, for all $n,k \in \Z^+$, $\binom{kn}{2} = k\binom{n}{2} + n^2 \binom{k}{2}$.
+
+\prob{57} Prove the following identities:
+\begin{enumerate}[label=(\alph*)]
+    \item $\binom{20}{8} \binom{8}{5} \binom{5}{3} = \binom{20}{3} \binom{17}{2} \binom{15}{4}$
+    \item For all positive integer $n \geq k \geq j$, $\binom{n}{k} \binom{k}{j} = \binom{n}{j} \binom{n-j}{k-j}$
+\end{enumerate}
+
+\end{document}
+
+\begin{comment}
+
+to delete files: latexmk -c
+
+to compile: pdflatex (filename).tex
+
+to add a pdf
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1 \linewidth]{{filename}.pdf}
+    \caption{Data sheet}
+\end{figure}
+
+\end{comment}
